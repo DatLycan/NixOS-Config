@@ -4,7 +4,6 @@
   imports =
     [ 
       ./system/default-user.nix
-      ./system/hyprland.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -44,6 +43,8 @@
     ''
       chmod g+rx /etc/nixos
     '';
+
+  programs.hyprland.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
