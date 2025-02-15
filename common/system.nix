@@ -3,6 +3,6 @@
 {
   imports =
     [ 
-      "../modules/system/default-user.nix"
+      ../modules/system/default-user.nix
     ];
 }
