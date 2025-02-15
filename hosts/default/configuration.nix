@@ -8,7 +8,7 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  networking.hostName = "nixos-personal";
+  networking.hostName = "default";
   default-user.userName = "datlycan";
   default-user.enable = true;
 

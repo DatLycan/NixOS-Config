@@ -19,11 +19,12 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   environment.systemPackages = with pkgs; [
-     neovim 
-     wget
-     git
-     nix-ld
-     nil
+    nh
+    neovim 
+    wget
+    git
+    nix-ld
+    nil
   ];
 
   services.openssh = {
