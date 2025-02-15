@@ -26,6 +26,7 @@
     git
     nix-ld
     nil
+    hyprland
   ];
 
   services.openssh = {
