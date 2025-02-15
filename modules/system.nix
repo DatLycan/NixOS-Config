@@ -4,6 +4,7 @@
   imports =
     [ 
       ./system/default-user.nix
+      ./system/hyprland.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
