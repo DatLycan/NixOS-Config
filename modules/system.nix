@@ -27,13 +27,6 @@
     nil
   ];
 
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "../";
-  };
-
   services.openssh = {
     enable = true;
     ports = [ 22 ];
@@ -43,6 +36,12 @@
       PermitRootLogin = "no";
     };
   };
+
+    #TODO: REMOVE!!
+    system.activationScripts.foo_home_read = pkgs.lib.stringAfter [ "users" ]
+    ''
+      chmod g+rx /etc/nixos
+    '';
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

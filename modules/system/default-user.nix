@@ -18,6 +18,7 @@ in
       initialPassword = "default";
       description = "Default User";
       useDefaultShell = true;
+      extraGroups = [ "wheel" ];
     };
   };
 }
