@@ -1,20 +1,19 @@
 { inputs, ... }:
 
-let user = "datlycan";
-in
 {
   imports =
     [ 
       ./hardware-configuration.nix
       ../../common/system.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   networking.hostName = "nixos-personal";
-  default-user.userName = user;
+  default-user.userName = "datlycan";
   default-user.enable = true;
 
   security.sudo.extraRules = [{
-    users = [user];
+    users = ["datlycan"];
     commands = [{
       command = "ALL";
       options = ["NOPASSWD"];
@@ -22,9 +21,9 @@ in
   }];
 
   home-manager = {
-    specialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs; };
     users = {
-      user = import ./home.nix;
+      "datlycan" = import ./home.nix;
     };
   };
 
