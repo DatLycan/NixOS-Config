@@ -1,13 +1,10 @@
-# ╔════════════════════════╗
-# ║    General Settings    ║
-# ╚════════════════════════╝
-
 { pkgs, ... }:
 
 {
   imports =
     [ 
       ./hardware-configuration.nix # Include the results of the hardware scan.
+      ../../modules/system/default-user.nix
     ];
 
   # Bootloader.
@@ -25,12 +22,8 @@
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.datlycan = {
-    isNormalUser = true;
-    description = "DatLycan";
-    extraGroups = [ "networkmanager" "wheel" "video" "audio"];
-  };
+  default-user.userName = "datlycan";
+  default-user.enable = true;
 
   security.sudo.extraRules = [{
     users = ["datlycan"];
