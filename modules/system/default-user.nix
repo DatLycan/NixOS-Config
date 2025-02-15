@@ -10,7 +10,7 @@
     };
   };
 
-  config =lib.mkIf config.main-user.enable {  
+  config = lib.mkIf config.default-user.enable {  
     users.users.${config.default-user.userName} = {
       isNormalUser = true;
       initialPassword = "default";
