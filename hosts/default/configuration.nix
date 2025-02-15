@@ -3,8 +3,8 @@
 {
   imports =
     [ 
-      ./hardware-configuration.nix # Include the results of the hardware scan.
-      ../../modules/system/default-user.nix
+      ./hardware-configuration.nix
+      ../../common/system.nix
     ];
 
   # Bootloader.
@@ -41,7 +41,7 @@
      nix-ld
      nil
   ];
-
+  
   programs.nix-ld.enable = true;
 
   services.openssh = {
