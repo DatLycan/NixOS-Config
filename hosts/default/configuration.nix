@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ inputs, ... }:
 
+let user = "datlycan";
+in
 {
   imports =
     [ 
@@ -7,53 +9,26 @@
       ../../common/system.nix
     ];
 
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-
-  nixpkgs.config.allowUnfree = true;
-
-  networking.networkmanager.enable = true;
-  networking.hostName = "nixos-personal"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  default-user.userName = "datlycan";
+  networking.hostName = "nixos-personal";
+  default-user.userName = user;
   default-user.enable = true;
 
   security.sudo.extraRules = [{
-    users = ["datlycan"];
+    users = [user];
     commands = [{
       command = "ALL";
       options = ["NOPASSWD"];
     }];
   }];
 
-  # List packages installed in system profile. 
-  environment.systemPackages = with pkgs; [
-     neovim 
-     wget
-     git
-     nix-ld
-     nil
-  ];
-  
-  programs.nix-ld.enable = true;
-
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = null;
-      PermitRootLogin = "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+  home-manager = {
+    specialArgs = { inherit inputs; };
+    users = {
+      user = import ./home.nix;
     };
   };
 
+  programs.nix-ld.enable = true; #TODO: Write a module for this vscode server
+
   # services.getty.autologinUser = "datlycan";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
