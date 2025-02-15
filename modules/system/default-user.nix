@@ -1,10 +1,12 @@
 { lib, config, ... }:
 
+let cfg = config.default-user; 
+in
 {
-  options = {
-    default-user.enable = lib.mkEnableOption "Enable user module";
+  options.default-user = {
+    enable = lib.mkEnableOption "Enable user module";
 
-    default-user.userName = lib.mkOption {
+    userName = lib.mkOption {
       default = "datlycan";
       description = "Default User";
     };
