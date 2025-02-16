@@ -41,6 +41,8 @@ in
           PermitRootLogin = "yes";
         };
       };
+
+      services.getty.autologinUser = config.default-user.userName;
     })
 
     # TODO Secure: Moderate security settings

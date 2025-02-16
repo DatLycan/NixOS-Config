@@ -21,8 +21,5 @@
     };
   };
 
-
   programs.nix-ld.enable = true; #TODO: Write a module for this vscode server as user module
-
-  # services.getty.autologinUser = "${identity.userName}";
 }

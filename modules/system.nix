@@ -22,13 +22,12 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   environment.systemPackages = with pkgs; [
-    pkgs.neovim 
-    pkgs.curl
-    pkgs.wget
-    pkgs.git
-    pkgs.nix-ld
-    pkgs.nil
-    pkgs.hyprland
+    neovim 
+    curl
+    wget
+    git
+    nix-ld
+    hyprland
   ];
 
   programs.hyprland.enable = true;
