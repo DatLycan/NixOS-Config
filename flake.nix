@@ -7,6 +7,8 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    nvf.url = "github:notashelf/nvf";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +18,7 @@
   outputs = { 
     self, 
     nixpkgs, 
+    nvf,
     ... 
     } 
     @inputs:
@@ -24,6 +27,12 @@
       version = "24.11";
     in 
     {
+      packages.${system}.default = 
+      (nvf.lib.neovimConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ ./modules/user/nvf.nix ];
+      }).neovim;
+
     nixosConfigurations = {
       default = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -35,6 +44,7 @@
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
+          nvf.nixosModules.default
         ];
       };
 
