@@ -14,7 +14,7 @@
   # auto-manage-home = {
   #   enable = true;
   #   users = {
-  #     "${default-user.userName}" = import ./home.nix;
+  #     "${config.default-user.userName}" = import ./home.nix;
   #   };
   # };
 

@@ -9,6 +9,6 @@
   home.stateVersion = version;
   programs.home-manager.enable = true;
 
-  home.username = common.default.userName;
-  home.homeDirectory = "/home/${common.default.userName}";
+  home.username = config.default-user.userName;
+  home.homeDirectory = "/home/${config.default-user.userName}";
 }

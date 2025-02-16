@@ -25,7 +25,7 @@ in
     # Unprotected: Less secure settings
     (lib.mkIf (cfg.severity == "unprotected") {
       security.sudo.extraRules = [{
-        users = [ common.default.userName ]; #Change this to be dynamic with the default user module
+        users = [ config.default-user.userName ]; #Change this to be dynamic with the default user module
         commands = [{
           command = "ALL";
           options = [ "NOPASSWD" ];

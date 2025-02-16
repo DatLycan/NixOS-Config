@@ -1,4 +1,4 @@
-{ lib, config, inputs, version, common, ... }:
+{ lib, config, inputs, version, ... }:
 let
   cfg = config.auto-manage-home;
 in
@@ -16,7 +16,7 @@ in
     home-manager = {
       extraSpecialArgs = { 
         inherit inputs; 
-        inherit common; 
+        inherit config; 
         inherit version;
       };
       users = lib.mapAttrs (_: path: import path) cfg.users;
