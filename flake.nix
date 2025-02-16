@@ -36,8 +36,8 @@
       installer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
           specialArgs = {
-            version = "24.11";
             inherit inputs;
+            version = "24.11";
           };
           modules = [
             inputs.disko.nixosModules.disko

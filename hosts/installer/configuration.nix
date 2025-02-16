@@ -2,6 +2,7 @@
   modulesPath,
   lib,
   pkgs,
+  version,
   ...
 }:
 {
@@ -9,11 +10,15 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./disk-config.nix
+    ./hardware-configuration.nix
   ];
   boot.loader.grub = {
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
+
+  networking.hostName = "installer";
+  networking.networkmanager.enable = true;
 
   services.openssh = {
     enable = true;
@@ -28,7 +33,10 @@
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
     pkgs.gitMinimal
+    pkgs.neovim
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = version;
 }
