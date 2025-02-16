@@ -18,13 +18,18 @@
     nixpkgs, 
     ... 
     } 
-    @inputs: {
+    @inputs:
+    let 
+      system = "x86_64-linux";
+      version = "24.11";
+    in 
+    {
     nixosConfigurations = {
       default = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
-          version = "24.11";
+          inherit system;
+          inherit version;
           id = import ./common/resources/identity.nix;
         };
         modules = [
@@ -34,14 +39,14 @@
       };
 
       installer = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
-            version = "24.11";
+            inherit system;
+            inherit version;
           };
           modules = [
-            inputs.disko.nixosModules.disko
             ./hosts/installer/configuration.nix
+            inputs.disko.nixosModules.disko
           ];
       };
     };

@@ -11,5 +11,4 @@
 
   home.username = id.userName;
   home.homeDirectory = "/home/${id.userName}";
-
 }
