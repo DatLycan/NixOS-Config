@@ -13,8 +13,8 @@ in
     };
   };
 
-  config = lib.mkIf config.default-user.enable {  
-    users.users.${config.default-user.userName} = {
+  config = lib.mkIf cfg.enable {  
+    users.users.${cfg.userName} = {
       isNormalUser = true;
       initialPassword = "default";
       description = "Default User";
@@ -22,4 +22,5 @@ in
       extraGroups = [ "wheel" ];
     };
   };
+  
 }

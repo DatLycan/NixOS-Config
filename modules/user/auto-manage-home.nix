@@ -4,15 +4,14 @@ let
 in
 {
   options.auto-manage-home = {
-    enable = lib.mkEnableOption "Enable home-manager module"
+    enable = lib.mkEnableOption "Enable home-manager module";
   
     homeConfigPath = lib.mkOption {
-      default = ./home.nix;
-      description = "Default home.nix path";
+      description = "Path to the home.nix configuration file";
     };
   };
 
-  config = lib.mkIf config.auto-manage-home.enable {
+  config = lib.mkIf cfg.enable {
     home-manager = {
       extraSpecialArgs = { 
         inherit inputs; 
@@ -20,7 +19,7 @@ in
         inherit version;
       };
       users = {
-        "${id.userName}" = import ;
+        "${id.userName}" = import cfg.homeConfigPath;
       };
     };
   };
