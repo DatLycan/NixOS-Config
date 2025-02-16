@@ -11,6 +11,7 @@
 
   networking.hostName = id.userName;
   default-user.enable = true;
+  auto-manage-home.enable = true;
 
   security.sudo.extraRules = [{
     users = ["${id.userName}"];

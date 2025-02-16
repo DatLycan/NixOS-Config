@@ -3,6 +3,6 @@
 {
   imports =
     [ 
-      ./user/home-manager.nix
+      ./user/auto-manage-home.nix
     ];
 }
