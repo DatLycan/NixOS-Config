@@ -4,6 +4,7 @@
   imports =
     [ 
       ./system/default-user.nix
+      ./system/system-security.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
