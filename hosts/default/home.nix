@@ -1,4 +1,4 @@
-{ config, pkgs, id, version, ... }:
+{ config, pkgs, common, version, ... }:
 
 {
   imports = [
@@ -9,6 +9,6 @@
   home.stateVersion = version;
   programs.home-manager.enable = true;
 
-  home.username = id.userName;
-  home.homeDirectory = "/home/${id.userName}";
+  home.username = common.default.userName;
+  home.homeDirectory = "/home/${common.default.userName}";
 }

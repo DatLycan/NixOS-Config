@@ -1,14 +1,14 @@
-{ lib, config, inputs, version, id, ... }:
+{ lib, config, inputs, version, ... }:
 let
   cfg = config.auto-manage-home;
 in
 {
   options.auto-manage-home = {
     enable = lib.mkEnableOption "Enable home-manager module";
-  
-    homeConfigPath = lib.mkOption {
-      type = lib.types.path;
-      description = "Path to the home.nix configuration file";
+
+    users = lib.mkOption {
+      type = lib.types.attrsOf lib.types.str;  # Attribute set with paths as values
+      description = "Users to be managed by home-manager, with their home configuration paths";
     };
   };
 
@@ -16,12 +16,10 @@ in
     home-manager = {
       extraSpecialArgs = { 
         inherit inputs; 
-        inherit id;
+        inherit common; 
         inherit version;
       };
-      users = {
-        "${id.userName}" = import cfg.homeConfigPath;
-      };
+      users = lib.mapAttrs (_: path: import path) cfg.users;
     };
   };
 }

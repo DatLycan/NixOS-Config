@@ -1,4 +1,4 @@
-{ inputs, id, ... }:
+{ config, inputs, common, ... }:
 
 {
   imports =
@@ -9,11 +9,13 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  networking.hostName = id.userName;
+  networking.hostName = common.default.hostName;
 
   # auto-manage-home = {
   #   enable = true;
-  #   homeConfigPath = ./home.nix;
+  #   users = {
+  #     "${default-user.userName}" = import ./home.nix;
+  #   };
   # };
 
   programs.nix-ld.enable = true; #TODO: Write a module for this vscode server as user module

@@ -30,7 +30,7 @@
           inherit inputs;
           inherit system;
           inherit version;
-          id = import ./common/resources/identity.nix;
+          common = import ./common/common.nix;
         };
         modules = [
           ./hosts/default/configuration.nix

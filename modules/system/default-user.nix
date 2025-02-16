@@ -1,4 +1,4 @@
-{ lib, config, id, ... }:
+{ lib, config, common, ... }:
 
 let 
   cfg = config.default-user;
@@ -10,7 +10,7 @@ in
     };
 
     userName = lib.mkOption {
-      default = id.userName;
+      default = common.default.userName;
       description = "Default User";
     };
   };
