@@ -22,12 +22,16 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   environment.systemPackages = with pkgs; [
+    fish
     neovim 
     curl
     wget
     git
     nix-ld
   ];
+
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
