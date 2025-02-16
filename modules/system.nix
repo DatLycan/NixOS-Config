@@ -31,22 +31,6 @@
     pkgs.hyprland
   ];
 
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = null;
-      PermitRootLogin = "yes";
-    };
-  };
-
-    #TODO: REMOVE!!
-    system.activationScripts.foo_home_read = pkgs.lib.stringAfter [ "users" ]
-    ''
-      chmod g+rx /etc/nixos
-    '';
-
   programs.hyprland.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -15,16 +15,38 @@ in
         "secure"
         "lockeddown"
       ];
-      default = "secure";
+      default = "unprotected";
       description = "System protection level";
     };
   };
 
-  config = lib.mkIf cfg.enable {  
-    security = lib.mkMerge [
-      (lib.mkIf (cfg.severity == "unprotected") (throw "Security level 'unprotected' is not implemented."))
-      (lib.mkIf (cfg.severity == "secure") (throw "Security level 'secure' is not implemented."))
-      (lib.mkIf (cfg.severity == "lockeddown") (throw "Security level 'lockeddown' is not implemented."))
-    ];
-  };
+  config = lib.mkIf cfg.enable (lib.mkMerge [
+    
+    # Unprotected: Less secure settings
+    (lib.mkIf (cfg.severity == "unprotected") {
+      security.sudo.extraRules = [{
+        users = [ id.userName ];
+        commands = [{
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }];
+      }];
+
+      services.openssh = {
+        enable = true;
+        ports = [ 22 ];
+        settings = {
+          PasswordAuthentication = true;
+          AllowUsers = null;
+          PermitRootLogin = "yes";
+        };
+      };
+    })
+
+    # TODO Secure: Moderate security settings
+    # (lib.mkIf (cfg.severity == "secure") { })
+
+    # TODO Locked Down: Maximum security settings
+    # (lib.mkIf (cfg.severity == "lockeddown") { })
+  ]);
 }

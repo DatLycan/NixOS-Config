@@ -16,14 +16,6 @@
   #   homeConfigPath = ./home.nix;
   # };
 
-  security.sudo.extraRules = [{
-    users = ["${id.userName}"];
-    commands = [{
-      command = "ALL";
-      options = ["NOPASSWD"];
-    }];
-  }];
-
   programs.nix-ld.enable = true; #TODO: Write a module for this vscode server as user module
 
   # services.getty.autologinUser = "${identity.userName}";
