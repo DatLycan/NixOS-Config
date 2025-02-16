@@ -3,6 +3,6 @@
 {
   imports =
     [ 
-      ./user/hyprland.nix
+      ./user/home-manager.nix
     ];
 }

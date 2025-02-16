@@ -1,10 +1,11 @@
-{ inputs, id, version, ... }:
+{ inputs, id, ... }:
 
 {
   imports =
     [ 
       ./hardware-configuration.nix
       ../../modules/system.nix
+      ../../modules/user.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -18,17 +19,6 @@
       options = ["NOPASSWD"];
     }];
   }];
-
-  home-manager = {
-    extraSpecialArgs = { 
-      inherit inputs; 
-      inherit id;
-      inherit version;
-    };
-    users = {
-      "${id.userName}" = import ./home.nix;
-    };
-  };
 
   programs.nix-ld.enable = true; #TODO: Write a module for this vscode server
 
