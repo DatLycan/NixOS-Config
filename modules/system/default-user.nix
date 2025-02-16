@@ -1,15 +1,14 @@
-{ lib, config, ... }:
+{ lib, config, id, ... }:
 
 let 
   cfg = config.default-user;
-  identity = import ../../common/resources/identity.nix;
 in
 {
   options.default-user = {
     enable = lib.mkEnableOption "Enable user module";
 
     userName = lib.mkOption {
-      default = "${identity.username}";
+      default = "${id.userName}";
       description = "Default User";
     };
   };

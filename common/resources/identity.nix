@@ -1,4 +1,4 @@
 {
-  displayname = "DatLycan";
-  username = "datlycan";
+  displayName = "DatLycan";
+  userName = "datlycan";
 }

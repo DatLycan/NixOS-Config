@@ -1,7 +1,5 @@
-{ inputs, ... }:
+{ inputs, id, ... }:
 
-let identity = import ../../common/resources/identity.nix;
-in
 {
   imports =
     [ 
@@ -10,11 +8,11 @@ in
       inputs.home-manager.nixosModules.default
     ];
 
-  networking.hostName = "${identity.username}";
+  networking.hostName = "${id.userName}";
   default-user.enable = true;
 
   security.sudo.extraRules = [{
-    users = ["${identity.username}"];
+    users = ["${id.userName}"];
     commands = [{
       command = "ALL";
       options = ["NOPASSWD"];
@@ -24,11 +22,11 @@ in
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "${identity.username}" = import ./home.nix;
+      "${id.userName}" = import ./home.nix;
     };
   };
 
   programs.nix-ld.enable = true; #TODO: Write a module for this vscode server
 
-  # services.getty.autologinUser = "${identity.username}";
+  # services.getty.autologinUser = "${identity.userName}";
 }

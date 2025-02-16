@@ -13,7 +13,13 @@
   outputs = { self, nixpkgs, ... } @inputs: {
     nixosConfigurations = {
       default = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          id = {
+            displayName = "DatLycan";
+            userName = "datlycan";
+          };
+        };
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
