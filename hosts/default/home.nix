@@ -1,4 +1,4 @@
-{ config, pkgs, common, version, ... }:
+{ pkgs, version, ... }:
 
 {
   imports = [
@@ -6,9 +6,9 @@
   ];
 
 
-  home.stateVersion = version;
+  home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 
-  home.username = config.default-user.userName;
-  home.homeDirectory = "/home/${config.default-user.userName}";
+  home.username = "datlycan";
+  home.homeDirectory = "/home/datlycan";
 }

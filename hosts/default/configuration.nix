@@ -1,4 +1,4 @@
-{ config, inputs, common, ... }:
+{ config, inputs, common, version, ... }:
 
 {
   imports =
@@ -11,12 +11,16 @@
 
   networking.hostName = common.default.hostName;
 
-  # auto-manage-home = {
-  #   enable = true;
-  #   users = {
-  #     "${config.default-user.userName}" = import ./home.nix;
-  #   };
-  # };
+  home-manager = {
+    extraSpecialArgs = { 
+      inherit inputs; 
+    };
+
+    users = { 
+        "${config.default-user.userName}" = import ./home.nix; 
+    };
+  };
+
 
   programs.nix-ld.enable = true; #TODO: Write a module for this vscode server as user module
 
