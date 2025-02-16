@@ -11,7 +11,6 @@ in
     ];
 
   networking.hostName = "${identity.username}";
-  default-user.userName = "${identity.username}";
   default-user.enable = true;
 
   security.sudo.extraRules = [{

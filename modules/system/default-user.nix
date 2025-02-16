@@ -1,13 +1,15 @@
 { lib, config, ... }:
 
-let cfg = config.default-user; 
+let 
+  cfg = config.default-user;
+  identity = import ../../common/resources/identity.nix;
 in
 {
   options.default-user = {
     enable = lib.mkEnableOption "Enable user module";
 
     userName = lib.mkOption {
-      default = "datlycan";
+      default = "${identity.username}";
       description = "Default User";
     };
   };
