@@ -1,4 +1,4 @@
-{ lib, config, id, ... }:
+{ lib, config, common, ... }:
 
 let 
   cfg = config.security;
@@ -25,7 +25,7 @@ in
     # Unprotected: Less secure settings
     (lib.mkIf (cfg.severity == "unprotected") {
       security.sudo.extraRules = [{
-        users = [ id.userName ];
+        users = [ common.default.userName ]; #Change this to be dynamic with the default user module
         commands = [{
           command = "ALL";
           options = [ "NOPASSWD" ];

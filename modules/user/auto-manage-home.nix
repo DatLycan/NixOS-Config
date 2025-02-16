@@ -1,4 +1,4 @@
-{ lib, config, inputs, version, ... }:
+{ lib, config, inputs, version, common, ... }:
 let
   cfg = config.auto-manage-home;
 in
