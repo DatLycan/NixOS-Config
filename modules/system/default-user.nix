@@ -8,7 +8,7 @@ in
     enable = lib.mkEnableOption "Enable user module";
 
     userName = lib.mkOption {
-      default = "${id.userName}";
+      default = id.userName;
       description = "Default User";
     };
   };

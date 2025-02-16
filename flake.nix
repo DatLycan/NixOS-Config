@@ -13,12 +13,11 @@
   outputs = { self, nixpkgs, ... } @inputs: {
     nixosConfigurations = {
       default = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
-          id = {
-            displayName = "DatLycan";
-            userName = "datlycan";
-          };
+          version = "24.11";
+          id = import ./common/resources/identity.nix;
         };
         modules = [
           ./hosts/default/configuration.nix

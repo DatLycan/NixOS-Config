@@ -1,17 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, id, version, ... }:
 
-let identity = import ../../common/resources/identity.nix;
-in
 {
   imports = [
     ../../modules/user.nix
   ];
 
 
-  home.stateVersion = "24.11";
+  home.stateVersion = version;
   programs.home-manager.enable = true;
 
-  home.username = identity.username;
-  home.homeDirectory = "/home/${identity.username}";
+  home.username = id.userName;
+  home.homeDirectory = "/home/${id.userName}";
 
 }

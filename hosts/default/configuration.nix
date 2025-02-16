@@ -1,4 +1,4 @@
-{ inputs, id, ... }:
+{ inputs, id, version, ... }:
 
 {
   imports =
@@ -8,7 +8,7 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  networking.hostName = "${id.userName}";
+  networking.hostName = id.userName;
   default-user.enable = true;
 
   security.sudo.extraRules = [{
@@ -20,7 +20,11 @@
   }];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { 
+      inherit inputs; 
+      inherit id;
+      inherit version;
+    };
     users = {
       "${id.userName}" = import ./home.nix;
     };
