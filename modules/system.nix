@@ -34,7 +34,7 @@
     settings = {
       PasswordAuthentication = true;
       AllowUsers = null;
-      PermitRootLogin = "no";
+      PermitRootLogin = "yes";
     };
   };
 
