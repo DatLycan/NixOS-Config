@@ -33,8 +33,8 @@
         ];
       };
 
-      aynwhere = nixpkgs.lib.nixosSystem {
-        isntaller = "x86_64-linux";
+      installer = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
           specialArgs = {
             version = "24.11";
             inherit inputs;
