@@ -5,7 +5,9 @@ let
 in
 {
   options.default-user = {
-    enable = lib.mkEnableOption "Enable user module";
+    enable = lib.mkEnableOption "Enable user module" // {
+      default = true;
+    };
 
     userName = lib.mkOption {
       default = id.userName;

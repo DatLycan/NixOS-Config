@@ -7,6 +7,7 @@ in
     enable = lib.mkEnableOption "Enable home-manager module";
   
     homeConfigPath = lib.mkOption {
+      type = lib.types.path;
       description = "Path to the home.nix configuration file";
     };
   };

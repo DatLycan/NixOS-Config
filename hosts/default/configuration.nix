@@ -10,12 +10,11 @@
     ];
 
   networking.hostName = id.userName;
-  default-user.enable = true;
 
-  auto-manage-home = {
-    enable = true;
-    homeConfigPath = ./home.nix;
-  };
+  # auto-manage-home = {
+  #   enable = true;
+  #   homeConfigPath = ./home.nix;
+  # };
 
   security.sudo.extraRules = [{
     users = ["${id.userName}"];
@@ -25,7 +24,7 @@
     }];
   }];
 
-  programs.nix-ld.enable = true; #TODO: Write a module for this vscode server
+  programs.nix-ld.enable = true; #TODO: Write a module for this vscode server as user module
 
   # services.getty.autologinUser = "${identity.userName}";
 }
