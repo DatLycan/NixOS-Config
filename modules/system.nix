@@ -27,10 +27,7 @@
     wget
     git
     nix-ld
-    hyprland
   ];
-
-  programs.hyprland.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

@@ -1,6 +1,9 @@
 { pkgs, version, ... }:
 
 {
+  imports = [
+    ./config
+  ];
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 
@@ -13,5 +16,6 @@
     rofi-wayland
     wl-clipboard
     brave
+    hyprland
   ];
 }
