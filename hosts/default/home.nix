@@ -13,12 +13,13 @@
   home.packages = with pkgs; [
     nil
     
-    jetbrains-mono
-    
     wl-clipboard
     brave
 
     hyprland
-    wayland
+    waybar
+    rofi-wayland
+
+    jetbrains-mono
   ];
 }

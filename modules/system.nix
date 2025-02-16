@@ -23,6 +23,7 @@
 
   environment.systemPackages = with pkgs; [
     fish
+    yazi
     neovim 
     curl
     wget

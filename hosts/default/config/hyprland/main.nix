@@ -7,12 +7,14 @@
 
       "$mainMod" = "SUPER";
       "$terminal" = "fish";
+      "$fileManager" = "$terminal -e sh -c 'yazi'";
+      "$menu" = "rofi-wayland";
 
       env = [
       ];
 
       exec-once = [
-        # "waybar"
+        "waybar"
       ];
 
       general = {
