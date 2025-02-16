@@ -4,6 +4,7 @@
   imports = [
     ./config
   ];
+
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 
@@ -11,11 +12,10 @@
 
   home.packages = with pkgs; [
     nil
-    wayland
-    waybar
-    rofi-wayland
     wl-clipboard
     brave
     hyprland
+    waybar
+    wayland
   ];
 }
