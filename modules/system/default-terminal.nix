@@ -14,13 +14,6 @@ in
     environment = {
       systemPackages = with pkgs; [
         fish
-        fishPlugins.fzf-fish
-        fishPlugins.z
-        fishPlugins.done
-        fzf
-        fd
-        bat
-        thefuck
       ];
     
       variables.EDITOR = "neovim";
@@ -36,6 +29,21 @@ in
       '';
     };
 
-    programs.fish.enable = true;
+    programs.fish = {
+      enable = true;
+
+      shellAliases = {
+        ".." = "cd ..";
+		    "..." = "cd ../..";
+		    "...." = "cd ../../../";
+		    "....." = "cd ../../../../";
+      };
+
+      shellAbbrs = {
+        # nix abbreviations
+        ncc = "nix-store --gc";
+        nrd = "sudo nixos-rebuild switch --flake /etc/nixos";
+	    };
+    };
   };
 }
