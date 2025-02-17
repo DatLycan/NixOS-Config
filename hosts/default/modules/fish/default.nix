@@ -3,11 +3,11 @@
 {
 	home.packages = with pkgs; [
 		fish
+		thefuck
+		fishPlugins.fzf
 	];
-
-	xdg.configFile."config.fish".source = ./config.fish;
-
   programs.fish = {
-    enable = true;
-  };
+		enable = true;
+		interactiveShellInit = builtins.readFile ./config.fish;
+	};
 }
