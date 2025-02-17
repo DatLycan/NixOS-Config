@@ -4,7 +4,10 @@
 	home.packages = with pkgs; [
 		fish
 		thefuck
-		fishPlugins.fzf
+		fzf
+		bat
+		eza
+		zoxide
 	];
   programs.fish = {
 		enable = true;
