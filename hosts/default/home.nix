@@ -2,24 +2,11 @@
 
 {
   imports = [
-    ./config
+    ./modules
   ];
 
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;
 
-  home.enableNixpkgsReleaseCheck = false; # TODO: Remove this line when merging everything to the same version
-
-  home.packages = with pkgs; [
-    nil
-    
-    wl-clipboard
-    brave
-
-    hyprland
-    waybar
-    rofi-wayland
-
-    jetbrains-mono
-  ];
+  home.enableNixpkgsReleaseCheck = false;
 }

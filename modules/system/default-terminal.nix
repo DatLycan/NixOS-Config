@@ -14,7 +14,13 @@ in
     environment = {
       systemPackages = with pkgs; [
         fish
+        fishPlugins.fzf-fish
+        fishPlugins.z
+        fishPlugins.done
         fzf
+        fd
+        bat
+        thefuck
       ];
     
       variables.EDITOR = "neovim";
