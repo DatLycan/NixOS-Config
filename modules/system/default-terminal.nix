@@ -38,8 +38,6 @@ in
       };
 
       shellAbbrs = {
-        # General Abbreviations
-        rb = "reboot";
         # Nix abbreviations
         ncc = "nix-store --gc";
         nrd = "sudo nixos-rebuild switch --flake /etc/nixos";
