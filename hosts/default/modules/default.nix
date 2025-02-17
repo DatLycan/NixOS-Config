@@ -3,5 +3,6 @@
     # ./hyprland
     ./starship
     ./fish
+    ./nvf
   ];
 }

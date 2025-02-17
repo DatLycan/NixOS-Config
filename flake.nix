@@ -7,6 +7,8 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    nvf.url = "github:notashelf/nvf";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +37,7 @@
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
+          nvf.nixosModules.default
         ];
       };
 
