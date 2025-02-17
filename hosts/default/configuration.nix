@@ -22,6 +22,7 @@
 
   default-user.enable = true;
   default-terminal.enable = false;
+  default-editor.enable = true;
   
   programs.nix-ld.enable = true; #TODO: Write a module for this vscode server as user module
 }

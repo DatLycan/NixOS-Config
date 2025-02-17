@@ -31,6 +31,7 @@ in
 
             nix.enable = true;
           };
+        };
       };
     };
   };

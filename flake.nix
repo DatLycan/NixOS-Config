@@ -17,7 +17,8 @@
 
   outputs = { 
     self, 
-    nixpkgs, 
+    nixpkgs,
+    nvf,
     ... 
     } 
     @inputs:

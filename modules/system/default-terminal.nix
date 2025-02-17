@@ -15,8 +15,6 @@ in
       systemPackages = with pkgs; [
         fish
       ];
-    
-      variables.EDITOR = "neovim";
     };
 
     programs.bash = {
