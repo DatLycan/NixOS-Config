@@ -28,6 +28,7 @@ in
     environment = {
       systemPackages = with pkgs; [
         wget
+        curl
         git
         nix-ld
       ];
