@@ -27,7 +27,7 @@
       version = "24.11";
     in 
     {
-      packages.${system}.default = 
+      packages.${system}.nvf-neovim = 
       (nvf.lib.neovimConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [ ./modules/user/nvf.nix ];
@@ -44,7 +44,6 @@
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
-          nvf.nixosModules.default
         ];
       };
 

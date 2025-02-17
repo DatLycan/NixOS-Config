@@ -5,7 +5,7 @@ let
 in
 {
   options.security = {
-    enable = lib.mkEnableOption "Enable user module" // {
+    enable = lib.mkEnableOption "Enable system-security" // {
       default = true;
     };
 

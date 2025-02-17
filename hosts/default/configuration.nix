@@ -4,8 +4,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ../../modules/system.nix
-      ../../modules/user.nix
+      ../../modules
       inputs.home-manager.nixosModules.default
     ];
 
@@ -21,5 +20,10 @@
     };
   };
 
+  config = {
+    default-user.enable = true;
+    default-terminal.enable = true;
+  };
+  
   programs.nix-ld.enable = true; #TODO: Write a module for this vscode server as user module
 }
