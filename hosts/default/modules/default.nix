@@ -1,7 +1,7 @@
 {
   imports = [
     # ./hyprland
-    # ./starship
+    ./starship
     ./fish
   ];
 }

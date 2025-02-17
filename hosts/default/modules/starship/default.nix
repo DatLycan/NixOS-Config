@@ -3,10 +3,11 @@
 {
 	home.packages = with pkgs; [
 		starship
+		# nerdfonts
 	];
   programs.starship = {
     enable = true;
 		enableFishIntegration = true;
-		interactiveShellInit = builtins.readFile ./starship.fish;
+		settings = pkgs.lib.importTOML ./starship.toml;
   };
 }

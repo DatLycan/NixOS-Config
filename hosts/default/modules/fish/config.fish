@@ -15,7 +15,6 @@ abbr --add -- ncc 'nix-store --gc'
 abbr --add -- nrd 'sudo nixos-rebuild switch --flake /etc/nixos'
 
 # Enable plugins
-thefuck --alias | source 
 thefuck --alias fk | source 
-
 zoxide init fish | source
+starship init fish | source
