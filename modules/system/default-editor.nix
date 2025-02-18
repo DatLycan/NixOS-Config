@@ -23,6 +23,9 @@ in
             nix.enable = true;
           };
 
+          ui = {
+            noice.enable = true;
+          };
         };
       };
     };

@@ -14,7 +14,6 @@
 
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
-
   };
 
   outputs = { 
@@ -41,9 +40,8 @@
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
-
-          nvf.nixosModules.default
-          stylix.nixosModules.stylix
+          inputs.nvf.nixosModules.default
+          inputs.stylix.nixosModules.stylix
         ];
       };
 
