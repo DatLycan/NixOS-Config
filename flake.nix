@@ -41,16 +41,6 @@
           inputs.stylix.nixosModules.stylix
         ];
       };
-
-      installer = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          inherit system;
-          inherit version;
-        };
-        
-        modules = ./hosts/installer/configuration.nix;
-      };
     };
   };
 }
