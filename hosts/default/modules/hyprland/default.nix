@@ -8,8 +8,5 @@
     hyprland
     waybar
     rofi-wayland
-
-    jetbrains-mono
-    wl-clipboard
   ];
 }

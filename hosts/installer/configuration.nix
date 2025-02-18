@@ -33,7 +33,6 @@
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
     pkgs.gitMinimal
-    pkgs.neovim
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

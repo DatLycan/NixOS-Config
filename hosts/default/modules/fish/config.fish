@@ -3,6 +3,7 @@ function fish_greeting
 end
 
 # Alias
+alias e 'nvim'
 alias cd 'z'
 alias .. 'z ..'
 alias ... 'z ../..'
@@ -11,6 +12,7 @@ alias .... 'z ../../..'
 alias ls 'eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
 
 # Abreviations
+abbr --add -- cc 'clear'
 abbr --add -- ncc 'nix-store --gc'
 abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos'
 

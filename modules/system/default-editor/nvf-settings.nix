@@ -1,5 +1,8 @@
 {
   programs.nvf.settings.vim = {
+
+    enableLuaLoader = true;
+    useSystemClipboard = true;
         
     theme = {
       enable = true;

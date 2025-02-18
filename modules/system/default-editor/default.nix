@@ -19,4 +19,5 @@ in
   config = lib.mkIf cfg.enable {
     programs.nvf.enable = true;
   };
+
 }
