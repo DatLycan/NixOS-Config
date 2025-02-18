@@ -1,16 +1,10 @@
 {
-  programs.nvf = {
+  programs.nvf.settings.vim = {
+
+    utility.motion.hop = {
       enable = true;
-
-    settings = {
-      vim = {
-
-        utility.motion.hop = {
-          enable = true;
-          mappings.hop = "f";
-        };
-        
-      };
+      mappings.hop = "f";
     };
+        
   };
 }

@@ -1,16 +1,10 @@
 {
-  programs.nvf = {
-      enable = true;
+  programs.nvf.settings.vim.maps = {
 
-    settings = {
-      vim.maps = {
-
-        normal.F = {
-          action = "<Nop>";
-          noremap = false;
-        };
-        
-      };
+    normal.F = {
+      action = "<Nop>";
+      noremap = false;
     };
+        
   };
 }
