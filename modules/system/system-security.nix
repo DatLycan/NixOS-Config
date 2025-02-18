@@ -39,6 +39,7 @@ in
           PasswordAuthentication = true;
           AllowUsers = null;
           PermitRootLogin = "yes";
+          X11Forwarding = true;
         };
       };
 
