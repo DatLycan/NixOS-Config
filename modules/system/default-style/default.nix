@@ -10,11 +10,11 @@ in
     };
 
     theme = lib.mkOption {
-      default = builtins.toPath ("./${common.default.theme}.yaml");
+      default = common.default.theme;
     };
   };
 
   config = lib.mkIf cfg.enable {
-    stylix.base16Scheme = import cfg.theme;
+    stylix.base16Scheme = import builtins.toPath ("./${cfg.theme}.yaml");
   };
 }

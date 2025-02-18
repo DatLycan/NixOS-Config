@@ -12,7 +12,7 @@ alias ls 'eza --color=always --long --git --no-filesize --icons=always --no-time
 
 # Abreviations
 abbr --add -- ncc 'nix-store --gc'
-abbr --add -- nrd 'sudo nixos-rebuild switch --flake /etc/nixos'
+abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos'
 
 # Enable plugins
 thefuck --alias fk | source 

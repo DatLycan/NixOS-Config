@@ -16,7 +16,11 @@ in
 
       settings = {
         vim = {
-          theme.enable = true;
+          theme = {
+            enable = true;
+            name = "tokyonight"; #TODO: Sync up with default-style module
+            style = "night";
+          };
 
           languages = {
             enableLSP = true;
