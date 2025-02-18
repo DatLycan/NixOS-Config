@@ -13,6 +13,7 @@ alias ls 'eza --color=always --long --git --no-filesize --icons=always --no-time
 
 # Abreviations
 abbr --add -- cc 'clear'
+abbr --add -- rb 'sudo reboot'
 abbr --add -- ncc 'nix-store --gc'
 abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos'
 
