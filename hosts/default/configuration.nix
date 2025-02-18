@@ -5,7 +5,9 @@
     [ 
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-    ] ++ map (name: ../../modules + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules));
+
+      map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system))
+    ];
 
   networking.hostName = common.default.hostName;
 
