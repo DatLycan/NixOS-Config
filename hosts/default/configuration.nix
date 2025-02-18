@@ -4,8 +4,9 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ../../modules
       inputs.home-manager.nixosModules.default
+      
+      builtins.mapAttrsToList (name: value: value) (builtins.readDir ../../modules);
     ];
 
   networking.hostName = common.default.hostName;
