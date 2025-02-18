@@ -49,7 +49,7 @@
           inherit version;
         };
         
-        modules = ./hosts/installer/configuration.nix
+        modules = ./hosts/installer/configuration.nix;
       };
     };
   };
