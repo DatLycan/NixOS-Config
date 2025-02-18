@@ -1,12 +1,14 @@
+{ pkgs, ... }:
+
 {
   imports = [
-    ./main.nix
+    ./config.nix
     ./binds.nix
   ];
 
   home.packages = with pkgs; [
     hyprland
-    waybar
-    rofi-wayland
   ];
+
+  wayland.windowManager.hyprland.enable = true;
 }

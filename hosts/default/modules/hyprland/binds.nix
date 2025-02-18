@@ -1,12 +1,9 @@
 {
   wayland.windowManager.hyprland.settings = { 
     binds = [
-      "$mainMod, Q, exec, kitty"
       "$mainMod, C, killactive,"
       "$mainMod, M, exit,"
-      "$mainMod, E, exec, dolphin"
       "$mainMod, V, togglefloating,"
-      "$mainMod, R, exec, wofi --show drun"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit,"
       "$mainMod, left, movefocus, l"

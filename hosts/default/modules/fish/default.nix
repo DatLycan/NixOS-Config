@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 	home.packages = with pkgs; [
@@ -9,6 +9,7 @@
 		eza
 		zoxide
 	];
+
   programs.fish = {
 		enable = true;
 		interactiveShellInit = builtins.readFile ./config.fish;
