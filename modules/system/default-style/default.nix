@@ -1,18 +1,16 @@
-{ lib, config, ... }:
+{ lib, config, common, ... }:
 
 let 
   cfg = config.default-style;
 in
 {
-
-
   options.default-style = {
     enable = lib.mkEnableOption "Enable default-style module" // {
       default = false;
     };
 
     theme = lib.mkOption {
-      default = ./tokyodark.yaml
+      default = builtins.toPath ("./${common.default.theme}.yaml");
     };
   };
 

@@ -18,7 +18,7 @@ in
   config = lib.mkIf cfg.enable {  
     users.users.${cfg.userName} = {
       isNormalUser = true;
-      initialPassword = "default";
+      initialPassword = "foobar";
       description = "Default User";
       extraGroups = [ "wheel" ];
     };

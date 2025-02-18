@@ -16,6 +16,8 @@ in
 
       settings = {
         vim = {
+          theme.enable = true;
+
           languages = {
             enableLSP = true;
             enableTreesitter = true;
@@ -23,9 +25,8 @@ in
             nix.enable = true;
           };
 
-          ui = {
-            noice.enable = true;
-          };
+          statusline.lualine.enable = true;
+          ui.noice.enable = true;
         };
       };
     };

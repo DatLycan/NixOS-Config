@@ -2,6 +2,7 @@
   default = {
     hostName = "default";
     userName = "datlycan";
-    DisplayName = "DatLycan";
+    displayName = "DatLycan";
+    theme = "tokyodark";
   };
 }
