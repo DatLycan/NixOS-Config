@@ -16,12 +16,6 @@ in
 
       settings = {
         vim = {
-          theme = {
-            enable = true;
-            name = "gruvbox";
-            style = "dark";
-          };
-          
           languages = {
             enableLSP = true;
             enableTreesitter = true;
