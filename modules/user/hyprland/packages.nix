@@ -6,5 +6,6 @@
     rofi-wayland
     lazygit
     brave
+    discordo
   ];
 }
