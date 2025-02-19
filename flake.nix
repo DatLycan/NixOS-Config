@@ -41,16 +41,6 @@
           inputs.stylix.nixosModules.stylix
         ];
       };
-
-      ISO = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          inherit system;
-        };
-        modules = [ 
-          ./hosts/ISO/configuration.nix 
-        ];
-      };
     };
   };
 }
