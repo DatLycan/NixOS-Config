@@ -1,4 +1,4 @@
-{ pkgs, system, modulesPath, ... }:
+{ config, pkgs, system, modulesPath, ... }:
 
 {
   imports =
@@ -6,5 +6,5 @@
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
-  nixpkgs.hostPlatform = "x86_64-linux";
+  default-user.enable = true;
 }

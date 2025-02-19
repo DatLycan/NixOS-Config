@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, version, ... }:
+{ lib, config, pkgs, inputs, system, version, ... }:
 
 let 
   cfg = config.system-config;
@@ -35,6 +35,7 @@ in
     };
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nixpkgs.hostPlatform = system;
     system.stateVersion = version;
   };
 
