@@ -1,9 +1,10 @@
-{ config, inputs, common, version, ... }:
+{ config, inputs, common, version, modulesPath, ... }:
 
 {
   imports =
   [ 
     ./hardware-configuration.nix
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
     inputs.home-manager.nixosModules.default
   ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
