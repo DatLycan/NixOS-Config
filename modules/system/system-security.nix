@@ -6,7 +6,7 @@ in
 {
   options.security = {
     enable = lib.mkEnableOption "Enable system-security" // {
-      default = true;
+      default = false;
     };
 
     severity = lib.mkOption {

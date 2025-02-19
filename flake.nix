@@ -1,5 +1,5 @@
 {
-  description = "Personal desktop config";
+  description = "DatLycan's NixOS config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
@@ -39,6 +39,16 @@
           inputs.home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
           inputs.stylix.nixosModules.stylix
+        ];
+      };
+
+      ISO = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          inherit system;
+        };
+        modules = [ 
+          ./hosts/ISO/configuration.nix 
         ];
       };
     };

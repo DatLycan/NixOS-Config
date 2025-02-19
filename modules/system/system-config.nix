@@ -6,7 +6,7 @@ in
 {
   options.system-config = {
     enable = lib.mkEnableOption "Enable system-config" // {
-      default = true;
+      default = false;
     };
   };
 
