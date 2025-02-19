@@ -1,10 +1,9 @@
-{ config, inputs, common, version, modulesPath, ... }:
+{ config, inputs, common, version, ... }:
 
 {
   imports =
   [ 
     ./hardware-configuration.nix
-    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
     inputs.home-manager.nixosModules.default
   ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
@@ -12,6 +11,9 @@
 
   home-manager.extraSpecialArgs = { inherit inputs; };
   home-manager.users."${config.default-user.userName}" = import ./home.nix;
+
+  system-config.enable = true;
+  system-security.enable = true;
 
   default-user.enable = true;
   default-editor.enable = true;

@@ -1,12 +1,12 @@
 { lib, config, common, ... }:
 
 let 
-  cfg = config.security;
+  cfg = config.system-security;
 in
 {
-  options.security = {
+  options.system-security = {
     enable = lib.mkEnableOption "Enable system-security" // {
-      default = true;
+      default = false;
     };
 
     severity = lib.mkOption {
