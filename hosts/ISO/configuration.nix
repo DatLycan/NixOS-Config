@@ -6,5 +6,5 @@
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
-  nixpkgs.hostPlatform = system;
+  nixpkgs.hostPlatform = "${system}";
 }
