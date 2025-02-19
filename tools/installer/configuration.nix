@@ -1,4 +1,4 @@
-{ version, modulesPath, pkgs, lib, ...}:
+{ config, version, modulesPath, pkgs, lib, ...}:
 
 {
   imports =
@@ -7,27 +7,22 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     ./hardware-configuration.nix
     ./disko.nix
-  ];
+  ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
+
+  # boot.loader.grub = {
+  #   efiSupport = true;
+  #   efiInstallAsRemovable = true;
+  # };
 
   boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-  };
-
-  environment.systemPackages = map lib.lowPrio [
-    pkgs.wget
-    pkgs.curl
-    pkgs.gitMinimal
-  ];
-
-  services.openssh = {
     enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "yes";
-    };
+    device = "/dev/sda";
   };
+
+  system-config.enable = true;
+  system-security.enable = true;
+
+  default-user.enable = true;
 
   system.stateVersion = version;
 }

@@ -26,6 +26,7 @@
     let 
       system = "x86_64-linux";
       version = "24.11";
+      common = import ./common/common.nix;
     in 
     {
     nixosConfigurations = {
@@ -34,7 +35,7 @@
           inherit inputs;
           inherit system;
           inherit version;
-          common = import ./common/common.nix;
+          inherit common; 
         };
         modules = [
           ./hosts/default/configuration.nix
@@ -46,7 +47,10 @@
 
       installer = nixpkgs.lib.nixosSystem {
         specialArgs = {
+          inherit inputs;
           inherit system;
+          inherit version;
+          inherit common; 
         };
         modules = [
           ./tools/installer/configuration.nix

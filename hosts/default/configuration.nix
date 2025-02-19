@@ -7,6 +7,11 @@
     inputs.home-manager.nixosModules.default
   ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/sda";
+  };
+  
   networking.hostName = common.default.hostName;
 
   home-manager.extraSpecialArgs = { inherit inputs; };

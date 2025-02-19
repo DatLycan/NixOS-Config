@@ -13,11 +13,6 @@ in
   config = lib.mkIf cfg.enable {
     nixpkgs.config.allowUnfree = true;
 
-    boot.loader.grub = {
-      enable = true;
-      device = "/dev/sda";
-    };
-
     networking.networkmanager.enable = true;
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     

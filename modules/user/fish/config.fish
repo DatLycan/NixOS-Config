@@ -16,7 +16,7 @@ abbr --add -- cc 'clear'
 abbr --add -- rb 'sudo reboot'
 abbr --add -- lg 'lazygit'
 abbr --add -- ncc 'nix-store --gc'
-abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos'
+abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos --show-trace'
 
 # Enable plugins
 thefuck --alias fk | source 
