@@ -16,7 +16,6 @@ in
     boot.loader.grub = {
       enable = true;
       device = "/dev/sda";
-      useOSProber = true;
     };
 
     networking.networkmanager.enable = true;

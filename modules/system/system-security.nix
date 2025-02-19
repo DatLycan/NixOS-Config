@@ -39,15 +39,31 @@ in
           PasswordAuthentication = true;
           AllowUsers = null;
           PermitRootLogin = "yes";
-          X11Forwarding = true;
         };
       };
 
       services.getty.autologinUser = config.default-user.userName;
     })
 
-    # TODO Secure: Moderate security settings
-    # (lib.mkIf (cfg.severity == "secure") { })
+    (lib.mkIf (cfg.severity == "secure") { 
+      security.sudo.extraRules = [{
+        users = [ config.default-user.userName ];
+        commands = [{
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }];
+      }];
+
+      services.openssh = {
+        enable = true;
+        ports = [ 22 ];
+        settings = {
+          PasswordAuthentication = true;
+          AllowUsers = config.default-user.userName;
+          PermitRootLogin = "prohibit-password";
+        };
+      };
+    })
 
     # TODO Locked Down: Maximum security settings
     # (lib.mkIf (cfg.severity == "lockeddown") { })
