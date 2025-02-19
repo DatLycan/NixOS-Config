@@ -1,28 +1,31 @@
-{ config, version, modulesPath, pkgs, lib, ...}:
+{ config, version, system, modulesPath, pkgs, ...}:
 
 {
   imports =
   [ 
     (modulesPath + "/installer/scan/not-detected.nix")
+    (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
-    ./hardware-configuration.nix
-    ./disko.nix
-  ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
-  # boot.loader.grub = {
-  #   efiSupport = true;
-  #   efiInstallAsRemovable = true;
-  # };
+    ./disko.nix
+    ../../modules/system/default-user.nix
+  ];
 
   boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
+    efiSupport = true;
+    efiInstallAsRemovable = true;
   };
 
-  system-config.enable = true;
-  system-security.enable = true;
+  environment.systemPackages = with pkgs; [
+    wget
+    curl
+    gitMinimal
+    disko
+  ];
 
   default-user.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.hostPlatform = system;
   system.stateVersion = version;
 }

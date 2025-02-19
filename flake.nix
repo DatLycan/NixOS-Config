@@ -7,9 +7,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
-
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
   };
@@ -19,7 +16,6 @@
     nixpkgs,
     nvf,
     stylix,
-    disko,
     ... 
     } 
     @inputs:
@@ -52,10 +48,7 @@
           inherit version;
           inherit common; 
         };
-        modules = [
-          ./tools/installer/configuration.nix
-          disko.nixosModules.disko
-        ];
+        modules = [ ./tools/installer/configuration.nix ];
       };
     };
   };
