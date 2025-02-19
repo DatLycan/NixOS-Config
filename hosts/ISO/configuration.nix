@@ -1,22 +1,10 @@
-{ config, inputs, common, version, ... }:
+{ pkgs, system, modulesPath, ... }:
 
 {
   imports =
-    [ 
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
+  [ 
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
+  ];
 
-  networking.hostName = common.default.hostName;
-
-  home-manager.extraSpecialArgs = { inherit inputs; };
-  home-manager.users."${config.default-user.userName}" = import ./home.nix;
-
-  system-config.enable = true;
-  system-security.enable = true;
-  default-user.enable = true;
-  default-editor.enable = true;
-  default-style.enable = true;
-  
-  programs.nix-ld.enable = true; # TODO: Write a module for this vscode server as user module
+  nixpkgs.hostPlatform = system;
 }
