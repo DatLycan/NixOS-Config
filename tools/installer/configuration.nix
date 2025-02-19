@@ -9,6 +9,7 @@
 
     ./disko.nix
     ../../modules/system/default-user.nix
+    ../../modules/system/default-editor
   ];
 
   boot.loader.grub = {
@@ -20,10 +21,10 @@
     wget
     curl
     gitMinimal
-    disko
   ];
 
   default-user.enable = true;
+  default-editor.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = system;

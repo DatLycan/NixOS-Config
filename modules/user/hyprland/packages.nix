@@ -7,5 +7,6 @@
     lazygit
     brave
     discordo
+    diskonaut
   ];
 }
