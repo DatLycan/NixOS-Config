@@ -59,7 +59,7 @@ in
         ports = [ 22 ];
         settings = {
           PasswordAuthentication = true;
-          AllowUsers = config.default-user.userName;
+          AllowUsers = [ config.default-user.userName ];
           PermitRootLogin = "prohibit-password";
         };
       };

@@ -13,7 +13,10 @@
   home-manager.users."${config.default-user.userName}" = import ./home.nix;
 
   system-config.enable = true;
-  system-security.enable = true;
+  system-security = {
+    enable = true;
+    # severity = "secure";
+  };
 
   default-user.enable = true;
   default-editor.enable = true;
