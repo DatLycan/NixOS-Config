@@ -43,6 +43,7 @@ in
       };
 
       services.getty.autologinUser = config.default-user.userName;
+      users.users.root.openssh.authorizedKeys.keyFiles = [ ../../common/resources/authorized_keys ];
     })
 
     (lib.mkIf (cfg.severity == "secure") { 
@@ -63,6 +64,8 @@ in
           PermitRootLogin = "prohibit-password";
         };
       };
+
+      users.users.root.openssh.authorizedKeys.keyFiles = [ ../../common/resources/authorized_keys ];
     })
 
     # TODO Locked Down: Maximum security settings
