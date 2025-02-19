@@ -9,11 +9,12 @@ alias .. 'z ..'
 alias ... 'z ../..'
 alias .... 'z ../../..'
 
-alias ls 'eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+alias ls 'eza --all --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
 
 # Abreviations
 abbr --add -- cc 'clear'
 abbr --add -- rb 'sudo reboot'
+abbr --add -- lg 'lazygit'
 abbr --add -- ncc 'nix-store --gc'
 abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos'
 
