@@ -8,11 +8,12 @@
 
     utility.motion.hop = {
       enable = true;
-      mappings.hop = "f";
+      mappings.hop = "F";
     };
 
     mini.comment.enable = true;
     mini.files.enable = true;
 
+    autocomplete.blink-cmp.enable = true;
   };
 }
