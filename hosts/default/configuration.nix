@@ -6,9 +6,10 @@
     inputs.home-manager.nixosModules.default
   ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
+  boot.loader = {
+    grub.enable = true;
+    grub.efiSupport = true;
+    efi.efiSysMountPoint = "/boot/efi";
   };
   
   networking.hostName = common.default.hostName;
