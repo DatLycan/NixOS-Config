@@ -3,7 +3,6 @@
 {
   imports =
   [ 
-    ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
