@@ -14,7 +14,7 @@
     disko
   ];
 
-  environment.etc."install.sh" = builtins.readFile ./install.sh;
+  environment.etc."install.sh" = ./install.sh;
 
   systemd.services.installScript = {
     description = "Make install.sh executable and run it as root";
