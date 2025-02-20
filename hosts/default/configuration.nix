@@ -8,8 +8,9 @@
   ] ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
   boot.loader.grub = {
+    enable = true;
+    device = "/dev/sda";
     efiSupport = true;
-    efiInstallAsRemovable = true;
   };
   
   networking.hostName = common.default.hostName;
