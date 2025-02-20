@@ -6,20 +6,27 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
-
-    ../../modules/system/default-user.nix
-    ../../modules/system/default-editor
   ];
 
   environment.systemPackages = with pkgs; [
-    wget
     curl
     gitMinimal
     disko
   ];
 
-  default-user.enable = true;
-  default-editor.enable = true;
+  environment.etc."install.sh" = builtins.readFile ./install.sh;
+
+  systemd.services.installScript = {
+    description = "Make install.sh executable and run it as root";
+    wantedBy = [ "multi-user.target" ];
+
+    serviceConfig.ExecStart = ''
+      chmod +x /etc/install.sh
+      /etc/install.sh
+    '';
+    serviceConfig.Type = "oneshot";
+  };
+
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = system;
