@@ -10,7 +10,7 @@
   boot.loader = {
     grub.enable = true;
     grub.efiSupport = true;
-    efi.efiSysMountPoint = "/boot/efi"
+    efi.efiSysMountPoint = "/boot/efi";
   };
   
   networking.hostName = common.default.hostName;
