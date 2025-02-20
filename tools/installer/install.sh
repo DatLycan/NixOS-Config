@@ -18,8 +18,8 @@ FILE_NAME="disko.nix"
 curl -o "$FILE_NAME" "$DISKO_CONFIG_URL"
 
 # Run disko using local installation
-disko --mode destroy,format,mount ./"$FILE_NAME"
+disko --mode destroy,format,mount "$FILE_NAME"
 
 # Generate config and install NixOS
 nixos-generate-config --root /mnt
-nixos-install --flake "$NIXOS_DIR"
+nixos-install --flake "${NIXOS_DIR}#default"
