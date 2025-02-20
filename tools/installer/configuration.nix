@@ -1,4 +1,4 @@
-{ config, version, system, modulesPath, pkgs, ...}:
+{ version, system, modulesPath, pkgs, ...}:
 
 {
   imports =
@@ -14,16 +14,16 @@
     disko
   ];
 
-  environment.etc."install.sh".source = ./install.sh;
+  environment.etc = {
+    "install.sh".source = ./install.sh;
+    "disko.nix".source = ./disko.nix;
+  };
 
-  systemd.services.installScript = {
-    description = "Make install.sh executable and run it on startup";
+  systemd.user.services.installScript = {
+    description = "Run the install script on user login";
     wantedBy = [ "multi-user.target" ];
 
-    serviceConfig.ExecStart = ''
-      chmod +x /etc/install.sh
-      /etc/install.sh
-    '';
+    script = builtins.readFile ./install.sh;
     serviceConfig.Type = "oneshot";
   };
 
