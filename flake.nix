@@ -39,7 +39,7 @@
         };
         modules = [
           ./hosts/default/configuration.nix
-          ./common/resources/hardware-configuration.nix
+          ./hardware-configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
           inputs.stylix.nixosModules.stylix
