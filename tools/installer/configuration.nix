@@ -7,8 +7,6 @@
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
 
-    ./disko.nix
-    ../../modules/system/default-user.nix
     ../../modules/system/default-editor
   ];
 
@@ -21,9 +19,9 @@
     wget
     curl
     gitMinimal
+    disko
   ];
 
-  default-user.enable = true;
   default-editor.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
