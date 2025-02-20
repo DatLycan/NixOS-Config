@@ -17,7 +17,7 @@
   environment.etc."install.sh".source = ./install.sh;
 
   systemd.services.installScript = {
-    description = "Make install.sh executable and run it as root";
+    description = "Make install.sh executable and run it on startup";
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig.ExecStart = ''
