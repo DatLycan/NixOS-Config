@@ -7,6 +7,7 @@
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
 
+    ../../modules/system/default-user
     ../../modules/system/default-editor
   ];
 
@@ -22,6 +23,7 @@
     disko
   ];
 
+  default-user.enable = true;
   default-editor.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -11,7 +11,7 @@ rm -rf "$NIXOS_DIR"
 git clone "$GIT_REPO" "$NIXOS_DIR"
 
 # Define variables
-DISKO_CONFIG_URL="https://github.com/DatLycan/NixOS/raw/installer/tools/installer/disko.nix"
+DISKO_CONFIG_URL="https://raw.githubusercontent.com/DatLycan/NixOS-Config/installer/tools/installer/disko.nix"
 FILE_NAME="disko.nix"
 
 # Download the file from GitHub

@@ -1,4 +1,4 @@
-{ lib, config, common, ... }:
+{ pkgs, lib, config, common, ... }:
 
 let 
   cfg = config.default-style;
@@ -15,6 +15,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    stylix.base16Scheme = import builtins.toPath ("./${cfg.theme}.yaml");
+    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
   };
 }
