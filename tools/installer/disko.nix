@@ -1,16 +1,15 @@
-{ lib, ... }:
 {
   disko.devices = {
     disk = {
       my-disk = {
-        device = lib.mkDefault "/dev/sda";
+        device = "/dev/sda";
         type = "disk";
         content = {
           type = "gpt";
           partitions = {
             ESP = {
               type = "EF00";
-              size = "256M";
+              size = "512M";
               content = {
                type = "filesystem";
                 format = "vfat";

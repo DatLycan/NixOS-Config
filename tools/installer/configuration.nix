@@ -11,11 +11,6 @@
     ../../modules/system/default-editor
   ];
 
-  boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-  };
-
   environment.systemPackages = with pkgs; [
     wget
     curl
