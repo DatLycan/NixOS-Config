@@ -9,7 +9,8 @@
   boot.loader = {
     grub.enable = true;
     grub.efiSupport = true;
-    efi.efiSysMountPoint = "/boot";
+    grub.device = "/dev/sda";
+    efi.canTouchEfiVariables = true;
   };
   
   networking.hostName = common.default.hostName;
