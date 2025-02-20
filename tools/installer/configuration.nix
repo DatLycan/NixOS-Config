@@ -7,7 +7,7 @@
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
 
-    ../../modules/system/default-user
+    ../../modules/system/default-user.nix
     ../../modules/system/default-editor
   ];
 
