@@ -10,15 +10,13 @@
       "XDG_SCREENSHOTS_DIR,$HOME/screens"
     ];
 
-    monitor = ",1920x1080@60,auto,1";
-    "$MOD" = "SUPER";
-    "$TERMINAL" = "fish";
-    "$FILE_MANAGER" = "$TERMINAL yazi";
-    # "$menu" = "wofi";
+    monitor = ",1920x1080@144,auto,1"; 
+    "$mainMod" = "SUPER";
+    "$terminal" = "kitty";
+    "$fileManager" = "$terminal yazi";
+    "$menu" = "walker";
 
-    exec-once = [
-      "brave"
-    ];
+    exec-once = [ ];
 
     general = {
       gaps_in = 0;
