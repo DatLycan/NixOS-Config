@@ -1,15 +1,34 @@
 {
   wayland.windowManager.hyprland.settings = {
     general = {
-      layout = "master";
       gaps_in = 5;
-      gaps_out = 5;
-      border_size = 2;
-      "col.active_border" = "rgba(e5b9c6ff) rgba(c293a3ff) 45deg";
-      "col.inactive_border" = "0xff382D2E";
-      no_border_on_floating = false;
+      gaps_out = 20;
+      border_size = 3;
+      layout = "master";
+
       resize_on_border = true;
       allow_tearing = false;
     };
+
+    decoration = {
+      rounding = 8;
+      blur = {
+        enabled = true;
+        size = 3;
+        passes = 1;
+      };
+    };
+
+    animations = {
+      enabled = true;
+      bezier = "overshot,0.13,0.99,0.29,1.1,";
+      animation = [
+        "fade,1,4,default"
+        "workspaces,1,4,default,fade"
+        "windows,1,4,overshot,popin 95%"
+      ];
+    };
+
+    misc.force_default_wallpaper = 0;
   };
 }

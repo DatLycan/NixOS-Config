@@ -1,5 +1,12 @@
 {
    wayland.windowManager.hyprland.settings = {
+    "$MOD" = "SUPER";
+    "$TERMINAL" = "foot fish";
+    "$FILE_MAN" = "foot yazi";
+    "$MENU" = "rofi -show drun";
+
+    monitor = ",1920x1080@144,auto,1"; 
+
     env = [
       # Hint Electron apps to use Wayland
       "NIXOS_OZONE_WL,1"
@@ -10,13 +17,9 @@
       "XDG_SCREENSHOTS_DIR,$HOME/screens"
     ];
 
-    monitor = ",1920x1080@144,auto,1"; 
-    "$MOD" = "SUPER";
-    "$TERMINAL" = "foot fish";
-    "$FILE_MAN" = "foot yazi";
-    "$MENU" = "rofi -show drun";
-
-
-    exec-once = [ ];
+    input = {
+      kb_layout = "us";
+      sensitivity = 0.1;
+    };
   };
 }
