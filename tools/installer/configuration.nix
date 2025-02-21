@@ -19,15 +19,6 @@
     "disko.nix".source = ./disko.nix;
   };
 
-  systemd.user.services.installScript = {
-    description = "Run the install script on user login";
-    wantedBy = [ "multi-user.target" ];
-
-    script = builtins.readFile ./install.sh;
-    serviceConfig.Type = "oneshot";
-  };
-
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = system;
   system.stateVersion = version;
