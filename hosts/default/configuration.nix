@@ -12,8 +12,8 @@
   system-security.enable = true;
 
   default-user.enable = true;
-  custom-nvf.enable = true;
-  # universal-style.enable = true;
+  universal-style.enable = true;
+  nvf.enable = true;
   gui.enable = true;
   
   home-manager = {

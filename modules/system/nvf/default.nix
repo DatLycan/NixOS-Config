@@ -1,7 +1,7 @@
 { lib, config, ... }:
 
 let 
-  cfg = config.custom-nvf;
+  cfg = config.nvf;
 in
 {
   imports = [
@@ -10,8 +10,8 @@ in
     ./mappings.nix
   ];
 
-  options.custom-nvf = {
-    enable = lib.mkEnableOption "Enable custom-nvf module" // {
+  options.nvf = {
+    enable = lib.mkEnableOption "Enable nvf module" // {
       default = false;
     };
   };
