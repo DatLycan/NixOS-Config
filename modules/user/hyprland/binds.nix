@@ -1,56 +1,56 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [ 
-      "$mainMod, SUPER_L, exec, $menu"
-      "$mainMod, R, exec, $terminal"
-      "$mainMod, E, exec, $fileManager"
+      "$MOD, SUPER_L, exec, $MENU"
+      "$MOD, R, exec, $TERMINAL"
+      "$MOD, E, exec, $FILE_MAN"
       
-      "$mainMod, F12, exit,"
-      "$mainMod, Q, killactive,"
-      "$mainMod, F, togglefloating,"
-      "$mainMod, P, pseudo,"
-      "$mainMod, S, togglesplit,"
+      "$MOD, F12, exit,"
+      "$MOD, Q, killactive,"
+      "$MOD, F, togglefloating,"
+      "$MOD, P, pseudo,"
+      "$MOD, S, togglesplit,"
 
       # Moving focus
-      "$mainMod, H, movefocus, l"
-      "$mainMod, J, movefocus, d"
-      "$mainMod, K, movefocus, u"
-      "$mainMod, L, movefocus, r"
+      "$MOD, H, movefocus, l"
+      "$MOD, J, movefocus, d"
+      "$MOD, K, movefocus, u"
+      "$MOD, L, movefocus, r"
 
       # Resizeing windows                   X  Y
-      "$mainMod SHIFT, H, resizeactive,  -60 0"
-      "$mainMod SHIFT, J,  resizeactive,  0  60"
-      "$mainMod SHIFT, K,    resizeactive,  0 -60"
-      "$mainMod SHIFT, L,  resizeactive, 60 0"
+      "$MOD SHIFT, H, resizeactive,  -60 0"
+      "$MOD SHIFT, J,  resizeactive,  0  60"
+      "$MOD SHIFT, K,    resizeactive,  0 -60"
+      "$MOD SHIFT, L,  resizeactive, 60 0"
 
       # Switching workspaces
-      "$mainMod, 1, workspace, 1"
-      "$mainMod, 2, workspace, 2"
-      "$mainMod, 3, workspace, 3"
-      "$mainMod, 4, workspace, 4"
-      "$mainMod, 5, workspace, 5"
-      "$mainMod, 6, workspace, 6"
-      "$mainMod, 7, workspace, 7"
-      "$mainMod, 8, workspace, 8"
-      "$mainMod, 9, workspace, 9"
-      "$mainMod, 0, workspace, 10"
+      "$MOD, 1, workspace, 1"
+      "$MOD, 2, workspace, 2"
+      "$MOD, 3, workspace, 3"
+      "$MOD, 4, workspace, 4"
+      "$MOD, 5, workspace, 5"
+      "$MOD, 6, workspace, 6"
+      "$MOD, 7, workspace, 7"
+      "$MOD, 8, workspace, 8"
+      "$MOD, 9, workspace, 9"
+      "$MOD, 0, workspace, 10"
 
       # Moving windows to workspaces
-      "$mainMod TAB, 1, movetoworkspace, 1"
-      "$mainMod TAB, 2, movetoworkspace, 2"
-      "$mainMod TAB, 3, movetoworkspace, 3"
-      "$mainMod TAB, 4, movetoworkspace, 4"
-      "$mainMod TAB, 5, movetoworkspace, 5"
-      "$mainMod TAB, 6, movetoworkspace, 6"
-      "$mainMod TAB, 7, movetoworkspace, 7"
-      "$mainMod TAB, 8, movetoworkspace, 8"
-      "$mainMod TAB, 9, movetoworkspace, 9"
-      "$mainMod TAB, 0, movetoworkspace, 10"
+      "$MOD TAB, 1, movetoworkspace, 1"
+      "$MOD TAB, 2, movetoworkspace, 2"
+      "$MOD TAB, 3, movetoworkspace, 3"
+      "$MOD TAB, 4, movetoworkspace, 4"
+      "$MOD TAB, 5, movetoworkspace, 5"
+      "$MOD TAB, 6, movetoworkspace, 6"
+      "$MOD TAB, 7, movetoworkspace, 7"
+      "$MOD TAB, 8, movetoworkspace, 8"
+      "$MOD TAB, 9, movetoworkspace, 9"
+      "$MOD TAB, 0, movetoworkspace, 10"
     ];
 
     bindm = [
-      "$mainMod, mouse:272, movewindow"
-      "$mainMod, mouse:273, resizewindow"
+      "$MOD, mouse:272, movewindow"
+      "$MOD, mouse:273, resizewindow"
     ];
   }; 
 }

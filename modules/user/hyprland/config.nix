@@ -11,10 +11,10 @@
     ];
 
     monitor = ",1920x1080@144,auto,1"; 
-    "$mainMod" = "SUPER";
-    "$terminal" = "kitty";
-    "$fileManager" = "$terminal superfile";
-    "$menu" = "tofi-drun";
+    "$MOD" = "SUPER";
+    "$TERMINAL" = "kitty";
+    "$FILE_MAN" = "$TERMINAL superfile";
+    "$MENU" = "walker";
 
     exec-once = [ ];
 
@@ -22,7 +22,7 @@
       gaps_in = 0;
       gaps_out = 0;
 
-      border_size = 5;
+      border_size = 3;
 
       "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 45deg";
       "col.inactive_border" = "rgba(3c3836ff)";
@@ -34,13 +34,13 @@
     };
 
     decoration = {
-      rounding = 0;
+      rounding = 10;
 
       active_opacity = 1.0;
       inactive_opacity = 1.0;
 
       shadow = {
-        enabled = false;
+        enabled = true;
       };
 
       blur = {
@@ -49,7 +49,7 @@
     };
 
     animations = {
-      enabled = false;
+      enabled = true;
     };
 
     input = {
