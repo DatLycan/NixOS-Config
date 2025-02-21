@@ -4,14 +4,12 @@
   imports = [
     ./config.nix
     ./binds.nix
-    ./packages.nix
   ];
 
   home.packages = with pkgs; [
     hyprland
     wayland
-    wayland-utils
-    wlroots
+    rofi-wayland
   ];
 
   wayland.windowManager.hyprland = {

@@ -19,14 +19,14 @@ in
     time.timeZone = "Europe/Berlin";
     i18n.defaultLocale = "en_US.UTF-8";
 
-    environment = {
-      systemPackages = with pkgs; [
-        wget
-        curl
-        git
-        nix-ld
-      ];
-    };
+    environment.systemPackages = with pkgs; [
+      wget
+      curl
+      git
+      nix-ld
+      wl-clipboard
+      lazygit
+    ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     nixpkgs.hostPlatform = system;
