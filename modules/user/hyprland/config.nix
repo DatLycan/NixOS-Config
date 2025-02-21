@@ -1,5 +1,5 @@
 {
-  programs.hyprland.settings = {
+   wayland.windowManager.hyprland.settings = {
     env = [
       # Hint Electron apps to use Wayland
       "NIXOS_OZONE_WL,1"
