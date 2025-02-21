@@ -1,14 +1,17 @@
 { pkgs, ... }:
 
 {
-	home.packages = with pkgs; [
-		starship
-		# nerdfonts
-	];
+	home = {
+		packages = with pkgs; [ 
+			starship 
+		];
+
+		file.".config/starship.toml".source = ./starship.toml;
+	};
+
   programs.starship = {
     enable = true;
 		enableFishIntegration = true;
-		settings = pkgs.lib.importTOML ./starship.toml;
   };
 
 }
