@@ -6,5 +6,14 @@
     ./binds.nix
   ];
 
-  wayland.windowManager.hyprland.enable = true;
+  home.packages = with pkgs; [
+    hyprland
+    wayland
+  ];
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = null;
+    portalPackage = null;
+  };
 }
