@@ -1,7 +1,7 @@
 { lib, config, ... }:
 
 let 
-  cfg = config.default-editor;
+  cfg = config.custom-nvf;
 in
 {
   imports = [
@@ -10,8 +10,8 @@ in
     ./nvf-mappings.nix
   ];
 
-  options.default-editor = {
-    enable = lib.mkEnableOption "Enable default-editor module" // {
+  options.custom-nvf = {
+    enable = lib.mkEnableOption "Enable custom-nvf module" // {
       default = false;
     };
   };

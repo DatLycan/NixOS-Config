@@ -1,11 +1,11 @@
 { pkgs, lib, config, common, ... }:
 
 let 
-  cfg = config.default-style;
+  cfg = config.universal-style;
 in
 {
-  options.default-style = {
-    enable = lib.mkEnableOption "Enable default-style module" // {
+  options.universal-style = {
+    enable = lib.mkEnableOption "Enable universal-style module" // {
       default = false;
     };
 
