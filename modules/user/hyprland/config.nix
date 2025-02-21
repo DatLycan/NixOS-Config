@@ -13,8 +13,8 @@
     monitor = ",1920x1080@144,auto,1"; 
     "$mainMod" = "SUPER";
     "$terminal" = "kitty";
-    "$fileManager" = "$terminal yazi";
-    "$menu" = "walker";
+    "$fileManager" = "$terminal superfile";
+    "$menu" = "tofi-drun";
 
     exec-once = [ ];
 

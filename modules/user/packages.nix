@@ -2,10 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    yazi
+    superfile
     kitty
     walker
-
+    tofi
 
     brave
     discordo
