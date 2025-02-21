@@ -16,10 +16,7 @@
 
     autocomplete.blink-cmp = {
       enable = true;
-      mappings = {
-        next = "<Down>";
-        previous = "<Up>";
-      };
+      setupOpts.keymap.preset = "enter";
     };
   };
 }

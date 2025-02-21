@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = map (name: ../../modules/user + "/${name}") (builtins.attrNames (builtins.readDir ../../modules/user));
