@@ -14,6 +14,7 @@
   default-user.enable = true;
   custom-nvf.enable = true;
   universal-style.enable = true;
+  gui.enable = true;
   
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
