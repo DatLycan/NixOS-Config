@@ -10,6 +10,8 @@
   home.packages = with pkgs; [
     hyprland
     wayland
+    wayland-utils
+    wlroots
   ];
 
   wayland.windowManager.hyprland = {
