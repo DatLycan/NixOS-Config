@@ -12,8 +12,8 @@
 
     monitor = ",1920x1080@144,auto,1"; 
     "$MOD" = "SUPER";
-    "$TERMINAL" = "kitty fish";
-    "$FILE_MAN" = "kitty superfile";
+    "$TERMINAL" = "foot fish";
+    "$FILE_MAN" = "foot superfile";
     "$MENU" = "rofi -show drun";
 
 
