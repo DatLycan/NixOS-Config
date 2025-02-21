@@ -5,9 +5,9 @@ let
 in
 {
   imports = [
-    ./nvf-settings.nix
-    ./nvf-plugins.nix
-    ./nvf-mappings.nix
+    ./settings.nix
+    ./plugins.nix
+    ./mappings.nix
   ];
 
   options.custom-nvf = {
