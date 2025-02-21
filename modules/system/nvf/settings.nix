@@ -11,5 +11,9 @@
       nix.enable = true;
     };
 
+    options = {
+      shiftwidth = 2;
+      tabstop = 2;
+    };
   };
 }

@@ -21,7 +21,6 @@ in
       initialPassword = "foobar";
       description = "Default User";
       extraGroups = [ "wheel" ];
-      openssh.authorizedKeys.keyFiles = [ ../../common/resources/authorized_keys ];
     };
   };
   

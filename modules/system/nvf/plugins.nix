@@ -14,6 +14,12 @@
     mini.comment.enable = true;
     mini.files.enable = true;
 
-    autocomplete.blink-cmp.enable = true;
+    autocomplete.blink-cmp = {
+      enable = true;
+      mappings = {
+        next = "<Down>";
+        previous = "<Up>";
+      };
+    };
   };
 }

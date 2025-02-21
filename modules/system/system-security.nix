@@ -43,7 +43,6 @@ in
       };
 
       services.getty.autologinUser = config.default-user.userName;
-      users.users.root.openssh.authorizedKeys.keyFiles = [ ../../common/resources/authorized_keys ];
     })
 
     (lib.mkIf (cfg.severity == "secure") { 
