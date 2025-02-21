@@ -3,9 +3,9 @@
 {
   home.packages = with pkgs; [
     kitty
-    walker
+    rofi
 
     brave
-    discordo
+    vesktop
   ];
 }
