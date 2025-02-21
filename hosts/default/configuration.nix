@@ -15,5 +15,11 @@
   custom-nvf.enable = true;
   universal-style.enable = true;
   
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users."${config.default-user.userName}" = import ./home.nix;
+    backupFileExtension = "backup";
+  };
+
   programs.nix-ld.enable = true; # TODO: Write a module for this vscode server as user module
 }
