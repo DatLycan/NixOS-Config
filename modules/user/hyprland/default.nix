@@ -4,6 +4,7 @@
   imports = [
     ./config.nix
     ./binds.nix
+    ./dependencies.nix
   ];
 
   wayland.windowManager.hyprland = {
