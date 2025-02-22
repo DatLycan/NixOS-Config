@@ -14,16 +14,13 @@
     stylix.url = "github:danth/stylix";
 
     # Extras
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = { 
     self, 
     nixpkgs,
-    nvf,
-    stylix,
-    disko,
-    zen-browser,
     ... 
     } 
     @inputs:
@@ -60,7 +57,7 @@
         modules = [ 
           ./tools/installer/configuration.nix
           inputs.nvf.nixosModules.default
-          disko.nixosModules.disko
+          inputs.disko.nixosModules.disko
         ];
       };
     };
