@@ -12,6 +12,9 @@
 
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
+
+    # Extras
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = { 
@@ -20,6 +23,7 @@
     nvf,
     stylix,
     disko,
+    zen-browser,
     ... 
     } 
     @inputs:

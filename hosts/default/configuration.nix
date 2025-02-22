@@ -1,4 +1,4 @@
-{ config, inputs, common, ... }:
+{ config, inputs, common, system, ... }:
 
 {
   imports =
@@ -21,7 +21,7 @@
   nvf.enable = true;
   
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs; inherit system; };
     users."${config.default-user.userName}" = import ./home.nix;
     backupFileExtension = "backup";
   };
