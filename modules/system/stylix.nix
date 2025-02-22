@@ -19,8 +19,8 @@ in
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
       image = pkgs.fetchurl {
-        url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
-        sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
+        url = "https://github.com/atraxsrc/tokyonight-wallpapers/blob/main/crosses_original.png?raw=true";
+        sha256 = "68d24637c68f2b60afd7510ddeb8027439357a65804485dad9e2d437af73ff25";
       };
     };
   };
