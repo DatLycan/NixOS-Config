@@ -21,5 +21,9 @@
       kb_layout = "us";
       sensitivity = 0.1;
     };
+
+    exec-once = [
+      "hyprpanel"
+    ];
   };
 }
