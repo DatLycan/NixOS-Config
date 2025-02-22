@@ -3,6 +3,6 @@
     hostName = "default";
     userName = "datlycan";
     displayName = "DatLycan";
-    theme = "tokyodark";
+    theme = "tokyo-night-dark";
   };
 }

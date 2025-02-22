@@ -1,8 +1,8 @@
 {
    wayland.windowManager.hyprland.settings = {
     "$MOD" = "SUPER";
-    "$TERMINAL" = "foot fish";
-    "$FILE_MAN" = "foot yazi";
+    "$TERMINAL" = "kitty fish";
+    "$FILE_MAN" = "kitty superfile";
     "$MENU" = "rofi -show drun";
 
     monitor = ",1920x1080@144,auto,1"; 

@@ -3,8 +3,8 @@
 {
   home.packages = with pkgs; [
     jetbrains-mono
-    foot
+    kitty
     rofi
-    yazi
+    superfile
   ];
 }

@@ -1,5 +1,11 @@
 {
   programs.nvf.settings.vim = {
+    
+    theme = {
+      enable = true;
+      name = "tokyonight";
+      style = "night";
+    };
 
     enableLuaLoader = true;
     useSystemClipboard = true;
