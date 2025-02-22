@@ -13,6 +13,12 @@ in
       default = common.default.userName;
       description = "Default User";
     };
+
+    autoLogin = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enable auto-login for the default user";
+    };
   };
 
   config = lib.mkIf cfg.enable {  
@@ -22,6 +28,7 @@ in
       description = "Default User";
       extraGroups = [ "wheel" ];
     };
+
+    services.getty.autologinUser = lib.mkIf cfg.autoLogin cfg.userName;
   };
-  
 }

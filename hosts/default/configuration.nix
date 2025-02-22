@@ -11,10 +11,14 @@
   system-config.enable = true;
   system-security.enable = true;
 
-  default-user.enable = true;
+  default-user = {
+    enable = true;
+    autoLogin = true;
+  };
+
+  gui.enable = true;
   universal-style.enable = true;
   nvf.enable = true;
-  gui.enable = true;
   
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
