@@ -5,7 +5,7 @@
     "$FILE_MAN" = "kitty superfile";
     "$MENU" = "rofi -show drun";
 
-    monitor = ", preferred, auto, 1"; 
+    monitor = ", 2560x1080@144, auto, 1"; 
 
     env = [
       # Hint Electron apps to use Wayland
@@ -19,7 +19,7 @@
 
     input = {
       kb_layout = "us";
-      sensitivity = 0.1;
+      sensitivity = 0.05;
     };
 
     exec-once = [
