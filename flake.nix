@@ -15,7 +15,6 @@
 
     # Extras
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = { 

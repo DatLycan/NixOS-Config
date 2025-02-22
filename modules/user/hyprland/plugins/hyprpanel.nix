@@ -34,7 +34,7 @@
       "bar.layouts" = {
         "0" = {
           left = [ "dashboard" "workspaces" ];
-          middle = [ "media" ];
+          middle = [ "" ];
           right = [ "volume" "systray" "notifications" ];
         };
       };
