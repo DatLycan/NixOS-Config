@@ -26,7 +26,7 @@ in
       isNormalUser = true;
       initialPassword = "foobar";
       description = "Default User";
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "audio" ];
     };
 
     services.getty.autologinUser = lib.mkIf cfg.autoLogin cfg.userName;
