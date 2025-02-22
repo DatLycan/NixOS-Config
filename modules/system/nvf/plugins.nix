@@ -11,9 +11,11 @@
       mappings.hop = "F";
     };
 
-    mini.comment.enable = true;
-    mini.files.enable = true;
-
+    mini = { 
+      comment.enable = true;
+      tabline.enable = true;
+    };
+    
     autocomplete.blink-cmp = {
       enable = true;
       setupOpts.keymap.preset = "enter";
