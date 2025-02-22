@@ -2,10 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    dorion
     vscodium
-    brave
     grim
+    discord
     swappy
   ];
 }
