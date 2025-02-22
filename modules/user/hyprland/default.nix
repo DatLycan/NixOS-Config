@@ -6,6 +6,8 @@
     ./binds.nix
     ./style.nix
     ./dependencies.nix
+
+    ./hyprpanel.nix
   ];
 
   wayland.windowManager.hyprland = {
