@@ -18,10 +18,10 @@
       "$MOD, L, movefocus, r"
 
       # Resizeing windows                   X  Y
-      "$MOD SHIFT, H, resizeactive,  -60 0"
-      "$MOD SHIFT, J,  resizeactive,  0  60"
-      "$MOD SHIFT, K,    resizeactive,  0 -60"
-      "$MOD SHIFT, L,  resizeactive, 60 0"
+      "$MOD, left, resizeactive,  -100 0"
+      "$MOD, down,  resizeactive,  0  100"
+      "$MOD, up,    resizeactive,  0 -100"
+      "$MOD, right,  resizeactive, 100 0"
 
       # Switching workspaces
       "$MOD, 1, workspace, 1"
