@@ -14,8 +14,10 @@
     mini = { 
       comment.enable = true;
       tabline.enable = true;
+      statusline.enable = true;
     };
-    
+
+     
     autocomplete.blink-cmp = {
       enable = true;
       setupOpts.keymap.preset = "enter";
