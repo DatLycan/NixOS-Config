@@ -29,6 +29,12 @@ in
       git-credential-oauth
     ];
 
+    fonts.fontconfig = {
+      subpixel.rgba = "rgb";
+      hinting.autohint = true;
+      hinting.style = "full";
+    };
+
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     nixpkgs.hostPlatform = system;
     system.stateVersion = version;
