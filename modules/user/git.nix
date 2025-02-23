@@ -5,7 +5,7 @@
     enable = true;
     userName = common.default.displayName;
     userEmail = common.default.email;
-    etraConfig = {
+    extraConfig = {
       credential.helper = "oauth";
     };
   };
