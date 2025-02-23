@@ -6,5 +6,6 @@
     rofi
     superfile
     cliphist
+    mpv
   ];
 }
