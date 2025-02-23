@@ -16,6 +16,8 @@
       { id = "gebbhagfogifgggkldgodflihgfeippi"; } #Return YT dislikes
     ];
     
-    commandLineArgs = [];
+    commandLineArgs = [
+     "--disable-session-crashed-bubble"
+    ];
 	};
 }

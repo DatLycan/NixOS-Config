@@ -3,7 +3,7 @@
     "$MOD" = "SUPER";
     "$TERMINAL" = "foot fish";
     "$FILE_MAN" = "foot superfile";
-    "$MENU" = "rofi-drun";
+    "$MENU" = "tofi-drun --drun-launch=true";
 
     monitor = ", 2560x1080@144, auto, 1"; 
 

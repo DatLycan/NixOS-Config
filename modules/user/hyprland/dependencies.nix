@@ -3,10 +3,9 @@
 {
   home.packages = with pkgs; [
     foot
-    rofi
+    tofi
     superfile
     cliphist
     mpv
-    walker
   ];
 }
