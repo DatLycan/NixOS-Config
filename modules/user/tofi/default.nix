@@ -3,10 +3,10 @@
 {
   home = {
 
-  packages = with pkgs; [
-    tofi
-  ];
+    packages = with pkgs; [
+      tofi
+    ];
 
-  file.".config/tofi/config".source = ./config;
+    file.".config/tofi/config".source = ./config;
   };
 }
