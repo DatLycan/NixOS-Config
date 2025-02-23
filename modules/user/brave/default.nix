@@ -12,9 +12,12 @@
     package = pkgs.brave;
     
     extensions = [
-
+      { id = "hfjbmagddngcpeloejdejnfgbamkjaeg"; } #Vimium
+      { id = "gebbhagfogifgggkldgodflihgfeippi"; } #Return YT dislikes
     ];
     
-    commandLineArgs = [];
+    commandLineArgs = [
+      "--enable-features=WebContentsForceDark"
+    ];
 	};
 }

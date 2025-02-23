@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, system, version, ... }:
+{ lib, config, pkgs, system, version, ... }:
 
 let 
   cfg = config.system-config;
