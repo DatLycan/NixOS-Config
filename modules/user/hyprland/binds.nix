@@ -15,7 +15,7 @@
       "$MOD, K, movefocus, u"
       "$MOD, L, movefocus, r"
 
-      # Resizeing windows                   X  Y
+      # Resizeing windows          X  Y
       "$MOD, left, resizeactive,  -100 0"
       "$MOD, down,  resizeactive,  0  100"
       "$MOD, up,    resizeactive,  0 -100"
@@ -34,16 +34,16 @@
       "$MOD, 0, workspace, 10"
 
       # Moving windows to workspaces
-      "$MOD, F1, movetoworkspacesilent, 1"
-      "$MOD, F2, movetoworkspacesilent, 2"
-      "$MOD, F3, movetoworkspacesilent, 3"
-      "$MOD, F4, movetoworkspacesilent, 4"
-      "$MOD, F5, movetoworkspacesilent, 5"
-      "$MOD, F6, movetoworkspacesilent, 6"
-      "$MOD, F7, movetoworkspacesilent, 7"
-      "$MOD, F8, movetoworkspacesilent, 8"
-      "$MOD, F9, movetoworkspacesilent, 9"
-      "$MOD, F10, movetoworkspacesilent, 10"
+      "$MOD SHIFT, 1, movetoworkspacesilent, 1"
+      "$MOD SHIFT, 2, movetoworkspacesilent, 2"
+      "$MOD SHIFT, 3, movetoworkspacesilent, 3"
+      "$MOD SHIFT, 4, movetoworkspacesilent, 4"
+      "$MOD SHIFT, 5, movetoworkspacesilent, 5"
+      "$MOD SHIFT, 6, movetoworkspacesilent, 6"
+      "$MOD SHIFT, 7, movetoworkspacesilent, 7"
+      "$MOD SHIFT, 8, movetoworkspacesilent, 8"
+      "$MOD SHIFT, 9, movetoworkspacesilent, 9"
+      "$MOD SHIFT, 0, movetoworkspacesilent, 10"
     ];
 
     bindm = [
