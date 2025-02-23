@@ -8,8 +8,6 @@
       "$MOD, F12, exit,"
       "$MOD, Q, killactive,"
       "$MOD, F, togglefloating,"
-      "$MOD, P, pseudo,"
-      "$MOD, S, togglesplit,"
 
       # Moving focus
       "$MOD, H, movefocus, l"
