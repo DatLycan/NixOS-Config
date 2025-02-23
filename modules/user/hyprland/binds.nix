@@ -34,16 +34,16 @@
       "$MOD, 0, workspace, 10"
 
       # Moving windows to workspaces
-      "$MOD TAB, 1, movetoworkspace, 1"
-      "$MOD TAB, 2, movetoworkspace, 2"
-      "$MOD TAB, 3, movetoworkspace, 3"
-      "$MOD TAB, 4, movetoworkspace, 4"
-      "$MOD TAB, 5, movetoworkspace, 5"
-      "$MOD TAB, 6, movetoworkspace, 6"
-      "$MOD TAB, 7, movetoworkspace, 7"
-      "$MOD TAB, 8, movetoworkspace, 8"
-      "$MOD TAB, 9, movetoworkspace, 9"
-      "$MOD TAB, 0, movetoworkspace, 10"
+      "$MOD, F1, movetoworkspacesilent, 1"
+      "$MOD, F2, movetoworkspacesilent, 2"
+      "$MOD, F3, movetoworkspacesilent, 3"
+      "$MOD, F4, movetoworkspacesilent, 4"
+      "$MOD, F5, movetoworkspacesilent, 5"
+      "$MOD, F6, movetoworkspacesilent, 6"
+      "$MOD, F7, movetoworkspacesilent, 7"
+      "$MOD, F8, movetoworkspacesilent, 8"
+      "$MOD, F9, movetoworkspacesilent, 9"
+      "$MOD, F10, movetoworkspacesilent, 10"
     ];
 
     bindm = [
