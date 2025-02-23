@@ -22,3 +22,19 @@ abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos --show-trace'
 thefuck --alias fk | source 
 zoxide init fish | source
 starship init fish | source
+
+
+## Enable repeat last command
+function bind_bang
+  switch (commandline -t)[-1]
+    case "!"
+      commandline -t -- $history[1]
+      commandline -f repaint
+    case "*"
+      commandline -i !
+  end
+end
+
+function fish_user_key_bindings
+  bind ! bind_bang
+end
