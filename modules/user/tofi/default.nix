@@ -7,6 +7,6 @@
       tofi
     ];
 
-    file.".config/tofi/config".source = ./config;
+    file.".config/tofi/config".source = ./config.ini;
   };
 }
