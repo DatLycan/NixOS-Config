@@ -26,6 +26,7 @@ in
       nix-ld
       wl-clipboard
       lazygit
+      git-credential-manager
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];

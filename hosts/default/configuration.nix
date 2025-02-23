@@ -21,7 +21,11 @@
   nvf.enable = true;
   
   home-manager = {
-    extraSpecialArgs = { inherit inputs; inherit system; };
+    extraSpecialArgs = { 
+      inherit inputs; 
+      inherit system;
+      inherit common;
+    };
     users."${config.default-user.userName}" = import ./home.nix;
     backupFileExtension = "backup";
   };
