@@ -16,8 +16,6 @@
       { id = "gebbhagfogifgggkldgodflihgfeippi"; } #Return YT dislikes
     ];
     
-    commandLineArgs = [
-      "--enable-features=WebContentsForceDark"
-    ];
+    commandLineArgs = [];
 	};
 }

@@ -2,10 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    kitty
+    foot
     rofi
     superfile
     cliphist
     mpv
+    walker
   ];
 }

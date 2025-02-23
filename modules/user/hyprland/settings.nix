@@ -1,9 +1,9 @@
 {
    wayland.windowManager.hyprland.settings = {
     "$MOD" = "SUPER";
-    "$TERMINAL" = "kitty fish";
-    "$FILE_MAN" = "kitty superfile";
-    "$MENU" = "rofi -show drun";
+    "$TERMINAL" = "foot fish";
+    "$FILE_MAN" = "foot superfile";
+    "$MENU" = "rofi-drun";
 
     monitor = ", 2560x1080@144, auto, 1"; 
 
@@ -37,6 +37,7 @@
 
     exec-once = [
       "hyprpanel"
+      "walker --gapplication-service"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
 
