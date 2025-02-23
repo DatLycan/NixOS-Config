@@ -3,12 +3,14 @@
 {
   home.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
-    dejavu-fonts
     fira-code
+    libertine
+    source-serif-pro
+    stix-two
+    vistafonts
     roboto
-    inter
     jetbrains-mono
   ];
 
