@@ -1,11 +1,10 @@
-{ pkgs, ... }:
-
-{
+{...}: {
   imports = [
     ./settings.nix
     ./binds.nix
     ./style.nix
     ./dependencies.nix
+    ./autostart.nix
 
     ./plugins/hyprpanel.nix
   ];
