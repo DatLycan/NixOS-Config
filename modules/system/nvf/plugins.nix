@@ -1,23 +1,22 @@
 {
   programs.nvf.settings.vim = {
-
     binds.whichKey.enable = true;
 
     telescope.enable = true;
     ui.noice.enable = true;
+    formatter.conform-nvim.enable = true;
 
     utility.motion.hop = {
       enable = true;
       mappings.hop = "F";
     };
 
-    mini = { 
+    mini = {
       comment.enable = true;
       tabline.enable = true;
       statusline.enable = true;
     };
 
-     
     autocomplete.blink-cmp = {
       enable = true;
       setupOpts.keymap.preset = "enter";

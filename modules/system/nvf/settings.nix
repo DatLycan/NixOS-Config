@@ -14,7 +14,10 @@
       enableLSP = true;
       enableTreesitter = true;
 
-      nix.enable = true;
+      nix = {
+        enable = true;
+        format.enable = true;
+      };
     };
 
     options = {
