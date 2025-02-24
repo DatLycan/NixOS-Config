@@ -6,13 +6,15 @@
     "$MENU" = "tofi-drun";   
 
     bind = [ 
+      # Actions
       "$MOD, SUPER_L, exec, $MENU"
       "$MOD, R, exec, $TERMINAL"
       "$MOD, E, exec, $FILE_MAN"
       
-      "$MOD, F12, exit,"
-      "$MOD, Q, killactive,"
       "$MOD, F, togglefloating,"
+      "$MOD, Q, killactive,"
+      "$MOD CTRL, Q, exit,"
+      "$MOD CTRL, R, exec, hyprctl reload"
 
       # Moving focus
       "$MOD, H, movefocus, l"
