@@ -1,17 +1,21 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$MOD" = "SUPER";
+    "$MENU" = "tofi-drun";   
     "$TERMINAL" = "foot fish";
     "$FILE_MAN" = "foot superfile";
-    "$MENU" = "tofi-drun";   
+    "$BROWSER" = "brave";
 
     bind = [ 
       # Actions
       "$MOD, SUPER_L, exec, $MENU"
-      "$MOD, R, exec, $TERMINAL"
+      "$MOD, RETURN, exec, $TERMINAL"
+      "$MOD, B, exec, $BROWSER"
       "$MOD, E, exec, $FILE_MAN"
       
-      "$MOD, F, togglefloating,"
+      "$MOD, F, fullscreen, 0"
+      "$MOD, M, fullscreen, 1"
+      "$MOD, T, togglefloating,"
       "$MOD, Q, killactive,"
       "$MOD CTRL, Q, exit,"
       "$MOD CTRL, R, exec, hyprctl reload"
