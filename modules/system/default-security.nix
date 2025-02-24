@@ -3,11 +3,11 @@
   config,
   ...
 }: let
-  cfg = config.system-security;
+  cfg = config.default-security;
 in {
-  options.system-security = {
+  options.default-security = {
     enable =
-      lib.mkEnableOption "Enable system-security"
+      lib.mkEnableOption "Enable default-security"
       // {
         default = false;
       };
