@@ -19,25 +19,22 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
-  outputs = { 
-    self, 
+  outputs = {
+    self,
     nixpkgs,
-    ... 
-    } 
-    @inputs:
-    let 
-      system = "x86_64-linux";
-      version = "24.11";
-      common = import ./common/common.nix;
-    in 
-    {
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    version = "24.11";
+    common = import ./common;
+  in {
     nixosConfigurations = {
       default = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           inherit system;
           inherit version;
-          inherit common; 
+          inherit common;
         };
         modules = [
           ./hosts/default/configuration.nix
@@ -53,9 +50,9 @@
           inherit inputs;
           inherit system;
           inherit version;
-          inherit common; 
+          inherit common;
         };
-        modules = [ 
+        modules = [
           ./tools/installer/configuration.nix
           inputs.nvf.nixosModules.default
           inputs.disko.nixosModules.disko

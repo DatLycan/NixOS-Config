@@ -1,13 +1,19 @@
-{ lib, config, pkgs, system, version, ... }:
-
-let 
-  cfg = config.system-config;
-in
 {
-  options.system-config = {
-    enable = lib.mkEnableOption "Enable system-config" // {
-      default = false;
-    };
+  lib,
+  config,
+  pkgs,
+  system,
+  version,
+  ...
+}: let
+  cfg = config.default-config;
+in {
+  options.default-config = {
+    enable =
+      lib.mkEnableOption "Enable default-config"
+      // {
+        default = false;
+      };
   };
 
   config = lib.mkIf cfg.enable {
@@ -15,7 +21,7 @@ in
 
     networking.networkmanager.enable = true;
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    
+
     time.timeZone = "Europe/Berlin";
     i18n.defaultLocale = "en_US.UTF-8";
 
@@ -35,9 +41,8 @@ in
       hinting.style = "full";
     };
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings.experimental-features = ["nix-command" "flakes"];
     nixpkgs.hostPlatform = system;
     system.stateVersion = version;
   };
-
 }
