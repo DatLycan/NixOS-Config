@@ -1,9 +1,6 @@
 {
    wayland.windowManager.hyprland.settings = {
-    "$MOD" = "SUPER";
-    "$TERMINAL" = "foot fish";
-    "$FILE_MAN" = "foot superfile";
-    "$MENU" = "tofi-drun";
+
 
     monitor = ", 2560x1080@144, auto, 1"; 
 
@@ -23,8 +20,6 @@
 
       # Fonts
       "FONT_NAME,JetBrains Mono 16"
-      # "DOCUMENT_FONT_NAME, something 16"
-      # "MONOSPACE_FONT_NAME, something 16"
       "FONT_ANTIALIASING,rgba"
       "FONT_HINTING,full"
     ];
@@ -37,10 +32,8 @@
 
     exec-once = [
       "hyprpanel"
-      "walker --gapplication-service"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
-
     ];
 
 

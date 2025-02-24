@@ -1,5 +1,10 @@
 {
   wayland.windowManager.hyprland.settings = {
+    "$MOD" = "SUPER";
+    "$TERMINAL" = "foot fish";
+    "$FILE_MAN" = "foot superfile";
+    "$MENU" = "tofi-drun";   
+
     bind = [ 
       "$MOD, SUPER_L, exec, $MENU"
       "$MOD, R, exec, $TERMINAL"
