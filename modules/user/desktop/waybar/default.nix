@@ -4,6 +4,8 @@
       waybar
     ];
 
-    # file.".config/tofi/config".source = ./config.ini;
+    file.".config/waybar/style.css".source = ./style.css;
+    file.".config/waybar/config.jsonc".source = ./config.jsonc;
+    file.".config/waybar/modules.json".source = ./modules.json;
   };
 }
