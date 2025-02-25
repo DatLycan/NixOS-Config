@@ -1,6 +1,6 @@
 {
-    "custom/arch": {
-        "format": "󰣇",
+    "custom/nixos": {
+        "format": "",
         "tooltip": true,
         "tooltip-format": "btw"
     },
@@ -10,11 +10,11 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}",
+        "format": "{icon}",
         "format-icons": {
             "urgent": "",
-            "active": "",
-            "default": ""
+            "active": "",
+            "default": ""
         }
     },
     "idle_inhibitor": {
@@ -43,13 +43,11 @@
         "on-click": "pavucontrol"
     },
     "network": {
-        "format-wifi": "   {essid} ({signalStrength}%)",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-	"on-click": "sh ~/scripts/rofi-wifi-menu/rofi-wifi-menu.sh"
-	 
+        "format-wifi": "Connected  ",
+        "format-ethernet": "Connected 󰈁",
+        "tooltip-format": "{ipaddr}/{cidr} | {ifname} via {gwaddr} 󱘖",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected 󰈂" 
     },
     "cpu": {
         "format": "  {usage}%",
@@ -68,8 +66,7 @@
     },
     "hyprland/language": {
        "format": "  {}",
-       "format-en": "EN",
-       "format-ru": "RU"
+       "format-en": "EN" 
     },
     "battery": {
         "states": {
@@ -87,7 +84,7 @@
         "bat": "BAT2"
     },
     "clock": {
-        "format": "{:%H:%M | %e %B} ",
+        "format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     }

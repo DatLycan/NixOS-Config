@@ -6,7 +6,7 @@
 }
 
 window#waybar {
-    background: rgba(26, 27, 38, 0.75);
+    background: rgba(26, 27, 38, 0);
     color: #c0caf5;
     font-family: 
         SpaceMono Nerd Font,
@@ -21,14 +21,18 @@ window#waybar {
     background: rgba(0, 0, 8, .7);
     margin: 5px 10px;
     padding: 0 5px;
-    border-radius: 15px;
+    border-radius: 6px;
+    border-width: 10px;
+    border-color: #526270;
 }
 .modules-left {
     padding: 0;
 }
 .modules-center {
     padding: 0 10px;
+    background: rgba(0, 0, 0, 0);
 }
+
 
 #clock,
 #battery,
@@ -49,7 +53,7 @@ window#waybar {
 #language,
 #mpd {
     padding: 0 10px;
-    border-radius: 15px;
+    border-radius: 6px;
 }
 
 #clock:hover,
@@ -83,7 +87,7 @@ window#waybar {
   font-size: 13pt;
   color: #c0caf5;
   border:none;
-  border-radius: 15px;
+  border-radius: 6px;
 }
 
 #workspaces button.active {
@@ -96,12 +100,12 @@ window#waybar {
   box-shadow: none;
 }
 
-#custom-arch {
+#custom-nixos {
     margin-left: 5px;
     padding: 0 10px;
     font-size: 25px;
     transition: color .5s;
 }
-#custom-arch:hover {
-    color: #1793d1;
+#custom-nixos:hover {
+    color: #89ddff;
 }
