@@ -1,6 +1,5 @@
 {
   programs.nvf.settings.vim = {
-    
     theme = {
       enable = true;
       name = "tokyonight";
@@ -9,7 +8,8 @@
 
     enableLuaLoader = true;
     useSystemClipboard = true;
-        
+    spellcheck.enable = true;
+
     languages = {
       enableLSP = true;
       enableTreesitter = true;
