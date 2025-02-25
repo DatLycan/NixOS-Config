@@ -6,7 +6,7 @@
     ./dependencies.nix
     ./autostart.nix
 
-    ./plugins/hyprpanel.nix
+    # ./plugins/hyprpanel.nix
   ];
 
   wayland.windowManager.hyprland = {

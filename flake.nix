@@ -15,8 +15,6 @@
 
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-    # Extras
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs = {
