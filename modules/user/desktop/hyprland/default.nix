@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-
-{
+{...}: {
   imports = [
     ./settings.nix
     ./binds.nix
     ./style.nix
     ./dependencies.nix
-
-    ./plugins/hyprpanel.nix
+    ./autostart.nix
+    ./plugins
   ];
 
   wayland.windowManager.hyprland = {

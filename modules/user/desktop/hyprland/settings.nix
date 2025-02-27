@@ -1,8 +1,6 @@
 {
-   wayland.windowManager.hyprland.settings = {
-
-
-    monitor = ", 2560x1080@144, auto, 1"; 
+  wayland.windowManager.hyprland.settings = {
+    monitor = ", 2560x1080@144, auto, 1";
 
     env = [
       # Hint Electron apps to use Wayland
@@ -12,7 +10,7 @@
       "XDG_SESSION_TYPE,wayland"
       "XDG_SESSION_DESKTOP,Hyprland"
       "XDG_SCREENSHOTS_DIR,$HOME/screens"
-      
+
       # Cursor
       # "HYPRCURSOR_THEME,"
       "HYPRCURSOR_SIZE,16"
@@ -31,11 +29,10 @@
     };
 
     exec-once = [
-      "hyprpanel"
+      "waybar"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
     ];
-
 
     xwayland = {
       use_nearest_neighbor = false;

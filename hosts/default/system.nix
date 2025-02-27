@@ -33,6 +33,4 @@
     users."${config.default-user.userName}" = import ./user.nix;
     backupFileExtension = "backup";
   };
-
-  programs.nix-ld.enable = true; # TODO: Write a module for this vscode server as user module
 }

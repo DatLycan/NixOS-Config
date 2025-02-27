@@ -41,6 +41,8 @@ in {
       hinting.style = "full";
     };
 
+    programs.nix-ld.enable = true;
+
     nix.settings.experimental-features = ["nix-command" "flakes"];
     nixpkgs.hostPlatform = system;
     system.stateVersion = version;
