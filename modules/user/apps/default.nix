@@ -5,11 +5,11 @@
     ./spotify
     ./vscode
     ./btop.nix
+    ./mpv.nix
   ];
 
   home.packages = with pkgs; [
     vesktop
-    mpv
     pavucontrol
     moonlight-qt
   ];
