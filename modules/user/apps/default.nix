@@ -2,15 +2,15 @@
   imports = [
     ./brave
     ./superfile
+    ./spotify
+    ./vscode
+    ./btop.nix
   ];
 
   home.packages = with pkgs; [
-    vscodium
     vesktop
     mpv
-    spotify
     pavucontrol
-    btop
     moonlight-qt
   ];
 }
