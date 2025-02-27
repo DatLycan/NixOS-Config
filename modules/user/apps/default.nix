@@ -11,5 +11,6 @@
     mpv
     pavucontrol
     btop
+    moonlight-qt
   ];
 }
