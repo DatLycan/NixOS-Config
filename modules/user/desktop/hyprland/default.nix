@@ -5,8 +5,7 @@
     ./style.nix
     ./dependencies.nix
     ./autostart.nix
-
-    ./plugins/dunst
+    ./plugins
   ];
 
   wayland.windowManager.hyprland = {
