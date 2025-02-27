@@ -10,5 +10,6 @@
     spotify-qt
     mpv
     pavucontrol
+    btop
   ];
 }
