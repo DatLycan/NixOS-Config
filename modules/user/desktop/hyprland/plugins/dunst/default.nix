@@ -4,6 +4,6 @@
       dunst
     ];
 
-    # file.".config/dunst/dunstrc".source = ./dunstrc.ini;
+    file.".config/dunst/dunstrc".source = ./dunstrc.ini;
   };
 }
