@@ -2,6 +2,8 @@
   home.packages = with pkgs; [
     cliphist
     libnotify
-    glib
+    libsForQt5.xwaylandvideobridge
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
   ];
 }

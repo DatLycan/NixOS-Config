@@ -9,5 +9,6 @@
     vesktop
     spotify-qt
     mpv
+    pavucontrol
   ];
 }
