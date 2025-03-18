@@ -8,7 +8,7 @@
 
     enableLuaLoader = true;
     useSystemClipboard = true;
-    spellcheck.enable = true;
+    spellcheck.enable = false;
 
     languages = {
       enableLSP = true;
