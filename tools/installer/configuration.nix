@@ -14,6 +14,8 @@
     disko
   ];
 
+  networking.networkmanager.enable = true;
+
   environment.etc = {
     "install.sh".source = ./install.sh;
     "disko.nix".source = ./disko.nix;
