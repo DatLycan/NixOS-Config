@@ -27,6 +27,7 @@
     common = import ./common;
   in {
     nixosConfigurations = {
+      # Framework 13
       default = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;

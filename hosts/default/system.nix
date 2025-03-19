@@ -20,6 +20,8 @@
     autoLogin = true;
   };
 
+  framework-config.enable = true;
+
   gui.enable = true;
   universal-style.enable = true;
   nvf.enable = true;
