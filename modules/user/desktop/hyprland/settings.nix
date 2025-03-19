@@ -1,6 +1,6 @@
 {
   wayland.windowManager.hyprland.settings = {
-    monitor = ", 2560x1080@144, auto, 1";
+    monitor = ", 2880x1920@120, auto, 2";
 
     env = [
       # Hint Electron apps to use Wayland
@@ -24,7 +24,7 @@
 
     input = {
       kb_layout = "us";
-      sensitivity = 0;
+      sensitivity = 0.5;
       force_no_accel = true;
     };
 
