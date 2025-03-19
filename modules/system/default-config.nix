@@ -34,6 +34,10 @@ in {
       git-credential-oauth
     ];
 
+    services = {
+      tailscale.enable = true;
+    };
+
     fonts.fontconfig = {
       subpixel.rgba = "rgb";
       hinting.autohint = true;

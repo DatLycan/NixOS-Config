@@ -14,7 +14,10 @@
   networking.hostName = common.default.hostName;
 
   default-config.enable = true;
-  default-security.enable = true;
+  default-security = {
+    severity = "lockdown";
+    enable = true;
+  };
   default-user = {
     enable = true;
     autoLogin = true;

@@ -16,7 +16,7 @@ in {
       type = lib.types.enum [
         "unprotected"
         "secure"
-        "lockeddown"
+        "lockdown"
       ];
       default = "secure";
       description = "System protection level";
@@ -24,7 +24,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
-    # Unprotected: Less secure settings
     (lib.mkIf (cfg.severity == "unprotected") {
       security.sudo.extraRules = [
         {
@@ -75,7 +74,15 @@ in {
       };
     })
 
-    # TODO Locked Down: Maximum security settings
-    # (lib.mkIf (cfg.severity == "lockeddown") { })
+    (lib.mkIf (cfg.severity == "lockdown") {
+      security.sudo.extraRules = [
+        {
+          users = [config.default-user.userName];
+          commands = [];
+        }
+      ];
+
+      services.openssh.enable = false;
+    })
   ]);
 }
