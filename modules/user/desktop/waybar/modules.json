@@ -33,8 +33,6 @@
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -75,7 +73,7 @@
         },
         "format": "{icon}  {capacity}%",
         "format-full": "{icon}  {capacity}%",
-        "format-charging": "  {capacity}%",
+        "format-charging": "󱐋 {capacity}%",
         "format-plugged": "  {capacity}%",
         "format-alt": "{time}  {icon}",
         "format-icons": ["", "", "", "", ""]
