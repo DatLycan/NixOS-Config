@@ -28,7 +28,7 @@
   in {
     nixosConfigurations = {
       # Framework 13
-      default = nixpkgs.lib.nixosSystem {
+      de-laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           inherit system;
