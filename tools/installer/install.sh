@@ -2,6 +2,7 @@
 
 NIXOS_DIR="/mnt/etc/nixos"
 GIT_REPO="https://github.com/DatLycan/NixOS-Config.git"
+GIT_FLAKE="github:Datlycan/NixOS-Config"
 MIN_DISK_SIZE_GB=50  
 
 set -e
@@ -53,9 +54,8 @@ if ! check_internet; then
 fi
 
 rm -rf "$NIXOS_DIR"
-git clone "$GIT_REPO" "$NIXOS_DIR"
 
-AVAILABLE_CONFIGS=$(nix flake show --json "$NIXOS_DIR" | jq -r '.nixosConfigurations | keys[]' | grep -v '^installer$')
+AVAILABLE_CONFIGS=$(nix flake show --json "$GIT_FLAKE" | jq -r '.nixosConfigurations | keys[]' | grep -v '^installer$')
 
 echo -e "\nAvailable configurations:"
 echo "$AVAILABLE_CONFIGS"
@@ -116,9 +116,13 @@ echo -e "\n\nStarting installation..."
 export TARGET_DISK
 disko --mode disko /etc/disko.nix
 
+git clone "$GIT_REPO" "$NIXOS_DIR"
+
 rm -f "${NIXOS_DIR}/hardware-configuration.nix"
 nixos-generate-config --root /mnt
 rm -f "${NIXOS_DIR}/configuration.nix"
+
+git update-index --assume-unchanged "${NIXOS_DIR}/hardware-configuration.nix"
 
 echo -e "\nInstalling NixOS with configuration: $TARGET_CONFIG\n"
 
