@@ -11,7 +11,7 @@
     ]
     ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
-  networking.hostName = "de-laptop";
+  networking.hostName = "default";
 
   default-config.enable = true;
   default-security = {
