@@ -28,7 +28,7 @@
     animations = {
       enabled = true;
       bezier = [
-        "pop, 0.05, 0.9, 0.1, 1.05"  
+        "pop, 0.05, 0.9, 0.1, 1.05"
       ];
       animation = [
         "windows, 1, 5, pop"
@@ -38,8 +38,11 @@
         "fade, 1, 2, default"
         "workspaces, 1, 6, default"
       ];
-     };
+    };
 
-    misc.force_default_wallpaper = 0;
+    misc = {
+      disable_hyprland_logo = true;
+      force_default_wallpaper = 0;
+    };
   };
 }
