@@ -17,10 +17,15 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       hyprland
+      hyprlock
       waybar
     ];
 
-    programs.hyprland.enable = true;
-    # programs.waybar.enable = true;
+    programs = {
+      hyprland.enable = true;
+      hyprlock.enable = true;
+    };
+
+    security.pam.services.hyprlock = {};
   };
 }
