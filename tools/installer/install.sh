@@ -17,7 +17,7 @@ setup_wifi() {
     
     if [ -n "$WIFI_DEVICE" ]; then
         echo "Wi-Fi adapter found: $WIFI_DEVICE"
-        echo "Scanning for available networks..."
+        echo -e "Scanning for available networks...\n"
         
         # List available SSIDs
         iwlist "$WIFI_DEVICE" scan | grep 'SSID' | awk -F '"' '{print $2}'
@@ -35,7 +35,8 @@ setup_wifi() {
         ip link set "$WIFI_DEVICE" up
         wpa_supplicant -B -i "$WIFI_DEVICE" -c /etc/wpa_supplicant.conf
         
-        sleep 5  
+        echo "Establishing connection..."
+        sleep 15  
 
         # Re-check internet connectivity
         if check_internet; then
@@ -58,7 +59,7 @@ fi
 rm -rf "$NIXOS_DIR"
 git clone "$GIT_REPO" "$NIXOS_DIR"
 
-AVAILABLE_CONFIGS=$(find "$NIXOS_DIR" -maxdepth 1 -type d -printf "%f\n" | tail -n +2)
+AVAILABLE_CONFIGS=$(nix flake show --json "$NIXOS_DIR" | jq -r '.nixosConfigurations | keys[]' | grep -v '^installer$')
 
 echo -e "\nAvailable configurations:"
 echo "$AVAILABLE_CONFIGS"
@@ -67,13 +68,14 @@ while true; do
     echo -n "Enter the target configuration name: "
     read -r TARGET_CONFIG
 
-    if [ -d "$NIXOS_DIR/$TARGET_CONFIG" ]; then
+    if echo "$AVAILABLE_CONFIGS" | grep -qx "$TARGET_CONFIG"; then
         break
     else
         echo -e "\nInvalid configuration. Please enter a valid name."
         echo -e "Available options:\n$AVAILABLE_CONFIGS"
     fi
 done
+
 
 # Function to detect the target disk (excluding USB & small disks)
 detect_disk() {

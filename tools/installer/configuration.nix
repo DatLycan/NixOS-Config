@@ -1,8 +1,11 @@
-{ version, system, modulesPath, pkgs, ...}:
-
 {
-  imports =
-  [ 
+  version,
+  system,
+  modulesPath,
+  pkgs,
+  ...
+}: {
+  imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
@@ -12,6 +15,8 @@
     curl
     gitMinimal
     disko
+    jq
+    libuuid
   ];
 
   environment.etc = {
@@ -19,7 +24,7 @@
     "disko.nix".source = ./disko.nix;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.hostPlatform = system;
   system.stateVersion = version;
 }
