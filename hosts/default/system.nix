@@ -11,14 +11,19 @@
     ]
     ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
 
-  networking.hostName = common.default.hostName;
+  networking.hostName = "default";
 
   default-config.enable = true;
-  default-security.enable = true;
+  default-security = {
+    severity = "lockdown";
+    enable = true;
+  };
   default-user = {
     enable = true;
     autoLogin = true;
   };
+
+  framework-config.enable = true;
 
   gui.enable = true;
   universal-style.enable = true;

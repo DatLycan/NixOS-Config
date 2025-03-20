@@ -9,8 +9,9 @@
   ];
 
   home.packages = with pkgs; [
-    vesktop
+    discord
     pavucontrol
     moonlight-qt
+    popsicle
   ];
 }

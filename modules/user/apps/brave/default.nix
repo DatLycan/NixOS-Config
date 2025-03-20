@@ -13,6 +13,7 @@
       {id = "hfjbmagddngcpeloejdejnfgbamkjaeg";} # Vimium
       {id = "gebbhagfogifgggkldgodflihgfeippi";} # Return YT dislikes
       {id = "gkkmiofalnjagdcjheckamobghglpdpm";} # YouTube Windowed FullScreen
+      {id = "nngceckbapebfimnlniiiahkandclblb";} # Bitwarden Password Manager
     ];
 
     commandLineArgs = [

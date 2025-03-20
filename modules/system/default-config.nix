@@ -20,7 +20,6 @@ in {
     nixpkgs.config.allowUnfree = true;
 
     networking.networkmanager.enable = true;
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     time.timeZone = "Europe/Berlin";
     i18n.defaultLocale = "en_US.UTF-8";
@@ -29,11 +28,16 @@ in {
       wget
       curl
       git
+      unzip
       nix-ld
       wl-clipboard
       lazygit
       git-credential-oauth
     ];
+
+    services = {
+      tailscale.enable = true;
+    };
 
     fonts.fontconfig = {
       subpixel.rgba = "rgb";

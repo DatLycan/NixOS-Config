@@ -11,11 +11,6 @@
       "XDG_SESSION_DESKTOP,Hyprland"
       "XDG_SCREENSHOTS_DIR,$HOME/screens"
 
-      # Cursor
-      # "HYPRCURSOR_THEME,"
-      "HYPRCURSOR_SIZE,16"
-      "XCURSOR_SIZE,16"
-
       # Fonts
       "FONT_NAME,JetBrains Mono 16"
       "FONT_ANTIALIASING,rgba"
@@ -29,7 +24,9 @@
     };
 
     exec-once = [
+      "hyprlock"
       "waybar"
+      "systemctl --user start hyprpolkitagent"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
     ];

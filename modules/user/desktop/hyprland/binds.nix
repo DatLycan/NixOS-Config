@@ -1,23 +1,24 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$MOD" = "SUPER";
-    "$MENU" = "tofi-drun";   
+    "$MENU" = "tofi-drun";
     "$TERMINAL" = "foot fish";
     "$FILE_MAN" = "foot superfile";
     "$BROWSER" = "brave";
 
-    bind = [ 
+    bind = [
       # Actions
       "$MOD, SUPER_L, exec, $MENU"
       "$MOD, RETURN, exec, $TERMINAL"
       "$MOD, B, exec, $BROWSER"
       "$MOD, E, exec, $FILE_MAN"
-      
+
       "$MOD, F, fullscreen, 0"
       "$MOD, M, fullscreen, 1"
       "$MOD, T, togglefloating,"
       "$MOD, Q, killactive,"
-      "$MOD CTRL, Q, exit,"
+      "$MOD, ESCAPE, exec, hyprlock"
+      "$MOD CTRL, ESCAPE, exit,"
       "$MOD CTRL, R, exec, hyprctl reload"
 
       # Moving focus
@@ -61,5 +62,5 @@
       "$MOD, mouse:272, movewindow"
       "$MOD, mouse:273, resizewindow"
     ];
-  }; 
+  };
 }
