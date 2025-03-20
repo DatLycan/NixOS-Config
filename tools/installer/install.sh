@@ -19,7 +19,6 @@ setup_wifi() {
         echo "Wi-Fi adapter found: $WIFI_DEVICE"
         echo -e "Scanning for available networks...\n"
         
-        # List available SSIDs
         iwlist "$WIFI_DEVICE" scan | grep 'SSID' | awk -F '"' '{print $2}'
 
         echo -n "Enter SSID: "
@@ -28,17 +27,14 @@ setup_wifi() {
         read -r -s PASSWORD
         echo ""
 
-        # Create a wpa_supplicant config file
         wpa_passphrase "$SSID" "$PASSWORD" | tee /etc/wpa_supplicant.conf >/dev/null
         
-        # Bring up the Wi-Fi interface
         ip link set "$WIFI_DEVICE" up
         wpa_supplicant -B -i "$WIFI_DEVICE" -c /etc/wpa_supplicant.conf
         
         echo "Establishing connection..."
         sleep 15  
 
-        # Re-check internet connectivity
         if check_internet; then
             echo "Wi-Fi connected successfully!"
             return 0
@@ -76,28 +72,36 @@ while true; do
     fi
 done
 
+echo -e "\nPlease select a disk for installation:"
 
-# Function to detect the target disk (excluding USB & small disks)
-detect_disk() {
-    DISK_CANDIDATES=$(lsblk -dno NAME,TYPE,SIZE | awk '$2 == "disk" {print "/dev/"$1, $3}')
-
-    for ENTRY in $DISK_CANDIDATES; do
-        DISK=$(echo "$ENTRY" | awk '{print $1}')
-        SIZE_GB=$(echo "$ENTRY" | awk '{print $2}' | sed 's/G//')
-
-        if ! udevadm info --query=property --name="$DISK" | grep -q 'ID_BUS=usb'; then
-            if [ "$(echo "$SIZE_GB >= $MIN_DISK_SIZE_GB" | bc)" -eq 1 ]; then
-                echo "$DISK"
-                return 0
-            fi
+DISKS=()
+INDEX=0
+while read -r disk size; do
+    if ! udevadm info --query=property --name="$disk" | grep -q 'ID_BUS=usb'; then
+        SIZE_GB=$((size / 1024 / 1024))
+        if [ "$SIZE_GB" -ge "$MIN_DISK_SIZE_GB" ]; then
+            DISKS+=("$disk")
+            echo "$INDEX: $disk (${SIZE_GB}GB)"
+            INDEX=$((INDEX + 1))
         fi
-    done
+    fi
+done < <(lsblk -dnbo NAME,SIZE | awk '{print "/dev/"$1, $2}')
 
+if [ "${#DISKS[@]}" -eq 0 ]; then
     echo "No suitable disk found" >&2
     exit 1
-}
+fi
 
-TARGET_DISK=$(detect_disk)
+while true; do
+    echo -n "Enter the index of the target disk: "
+    read -r DISK_INDEX
+    if [[ "$DISK_INDEX" =~ ^[0-9]+$ ]] && [ "$DISK_INDEX" -ge 0 ] && [ "$DISK_INDEX" -lt "${#DISKS[@]}" ]; then
+        TARGET_DISK="${DISKS[$DISK_INDEX]}"
+        break
+    else
+        echo "Invalid selection. Please choose a valid index."
+    fi
+done
 
 echo -e "\nTHIS WILL CLEAR $TARGET_DISK"
 
@@ -117,6 +121,9 @@ nixos-generate-config --root /mnt
 rm -f "${NIXOS_DIR}/configuration.nix"
 
 echo -e "\nInstalling NixOS with configuration: $TARGET_CONFIG\n"
+
+sleep 5
+
 nixos-install --flake "${NIXOS_DIR}#${TARGET_CONFIG}"
 
 reboot
