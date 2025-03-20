@@ -19,6 +19,13 @@ in {
       framework-tool
     ];
 
+    hardware = {
+      bluetooth = {
+        enable = true;
+        powerOnBoot = true;
+      };
+    };
+
     security.pam.services = {
       login.fprintAuth = true;
       sudo.fprintAuth = true;
@@ -27,6 +34,7 @@ in {
     services = {
       fwupd.enable = true;
       fprintd.enable = true;
+      blueman.enable = true;
     };
 
     programs = {
