@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       my-disk = {
-        device = "/dev/sda";
+        device = builtins.getEnv "TARGET_DISK";
         type = "disk";
         content = {
           type = "gpt";
@@ -11,10 +11,10 @@
               type = "EF00";
               size = "512M";
               content = {
-               type = "filesystem";
+                type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
+                mountOptions = ["umask=0077"];
               };
             };
 
