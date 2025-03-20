@@ -26,6 +26,7 @@
     exec-once = [
       "hyprlock"
       "waybar"
+      "systemctl --user start hyprpolkitagent"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
     ];

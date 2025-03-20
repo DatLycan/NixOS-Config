@@ -12,5 +12,6 @@
     discord
     pavucontrol
     moonlight-qt
+    popsicle
   ];
 }

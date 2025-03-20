@@ -28,6 +28,7 @@ in {
       wget
       curl
       git
+      unzip
       nix-ld
       wl-clipboard
       lazygit
