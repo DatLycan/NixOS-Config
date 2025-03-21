@@ -27,11 +27,6 @@ in {
       hyprlock.enable = true;
     };
 
-    # security.pam.services.hyprlock = {
-    #   allowNullPassword = false;
-    #   text = ''
-    #     auth include login
-    #   '';
-    # };
+    security.pam.services.hyprlock = {};
   };
 }
