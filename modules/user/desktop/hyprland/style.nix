@@ -13,12 +13,12 @@
     decoration = {
       rounding = 6;
       active_opacity = 1.0;
-      inactive_opacity = 0.85;
+      inactive_opacity = 0.65;
       fullscreen_opacity = 1.0;
 
       blur = {
         enabled = true;
-        size = 6;
+        size = 4;
         passes = 2;
         ignore_opacity = true;
         xray = true;

@@ -24,11 +24,8 @@ in {
       enable = true;
 
       polarity = "dark";
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/${cfg.theme}.yaml";
-      image = pkgs.fetchurl {
-        url = "https://github.com/atraxsrc/tokyonight-wallpapers/blob/main/crosses_original.png?raw=true";
-        sha256 = "68d24637c68f2b60afd7510ddeb8027439357a65804485dad9e2d437af73ff25";
-      };
+      base16Scheme = builtins.toPath ./themes/${cfg.theme}.yaml;
+      image = ./wallpapers/${cfg.theme}.png;
 
       cursor = {
         name = "DMZ-White";

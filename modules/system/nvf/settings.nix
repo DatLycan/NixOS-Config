@@ -1,9 +1,9 @@
-{
+{common, ...}: {
   programs.nvf.settings.vim = {
     theme = {
       enable = true;
-      name = "tokyonight";
-      style = "night";
+      name = "${common.default.theme}";
+      style = "dark";
     };
 
     enableLuaLoader = true;
