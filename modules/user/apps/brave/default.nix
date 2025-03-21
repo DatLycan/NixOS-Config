@@ -1,8 +1,18 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home = {
     packages = with pkgs; [
       chromium
     ];
+
+    activation = {
+      set-brave-preferences = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        ${pkgs.coreutils}/bin/cp -f ${./Preferences} ~/.config/BraveSoftware/Brave-Browser/Default/Preferences
+      '';
+    };
   };
 
   programs.chromium = {
