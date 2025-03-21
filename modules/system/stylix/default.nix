@@ -25,7 +25,7 @@ in {
 
       polarity = "dark";
       base16Scheme = builtins.toPath ./themes/${cfg.theme}.yaml;
-      image = builtins.toPath ./wallpapers/${cfg.theme}.png;
+      image = ./wallpapers/${cfg.theme}.png;
 
       cursor = {
         name = "DMZ-White";
