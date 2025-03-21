@@ -12,6 +12,7 @@ $git_status\
 $time\
 [ ](fg:color02)\
 $line_break\
+$line_break\
 $character"""
 
 palette = 'nord'
@@ -33,6 +34,7 @@ color12 = '#88C0D0'
 color13 = '#81A1C1'
 color14 = '#B48EAD'
 color15 = '#5E81AC'
+color_error = '#BF616A'
 
 [username]
 show_always = true
@@ -66,9 +68,9 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:color11)'
-error_symbol = '[](bold fg:color14)'
-vimcmd_symbol = '[󰁗](bold fg:color0B)'
-vimcmd_replace_one_symbol = '[󰁗](bold fg:color0E)'
-vimcmd_replace_symbol = '[󰁗](bold fg:color0E)'
-vimcmd_visual_symbol = '[󰁗](bold fg:color05)'
+success_symbol = '[ ➜](bold fg:color11)'
+error_symbol = '[ ➜](bold fg:color_error)'
+vimcmd_symbol = '[󰁗 ](bold fg:color05)'
+vimcmd_replace_one_symbol = '[󰁗 ](bold fg:color14)'
+vimcmd_replace_symbol = '[󰁗 ](bold fg:color14)'
+vimcmd_visual_symbol = '[󰁗 ](bold fg:color13)'
