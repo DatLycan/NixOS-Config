@@ -1,38 +1,28 @@
 * {
     /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-family: "JetBrains Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
     transition: background-color .3s ease-out;
 }
 
 window#waybar {
-    background: rgba(26, 27, 38, 0);
-    color: #c0caf5;
+    background-color: rgba(0,0,0,0);
+    color: #E5E9F0;
     font-family: 
         SpaceMono Nerd Font,
         feather;
-    transition: background-color .5s;
+    transition: background-color .3s;
 }
 
 .modules-left,
-.modules-center,
 .modules-right
-{
-    background: rgba(0, 0, 8, .7);
-    margin: 5px 10px;
-    padding: 0 5px;
+{ 
+    background-color: #2E3440;
+    margin: 13px 12px 0px 12px;
+    padding: 0px;
+    border: 2px solid #81A1C1;
     border-radius: 6px;
-    border-width: 10px;
-    border-color: #526270;
 }
-.modules-left {
-    padding: 0;
-}
-.modules-center {
-    padding: 0 10px;
-    background: rgba(0, 0, 0, 0);
-}
-
 
 #clock,
 #battery,
@@ -74,7 +64,7 @@ window#waybar {
 #power-profiles-daemon:hover,
 #language:hover,
 #mpd:hover {
-    background: rgba(26, 27, 38, 0.9);
+    background-color: #13131d;
 }
 
 
@@ -84,28 +74,25 @@ window#waybar {
     SpaceMono Nerd Font,
     feather;
   font-weight: 900;
-  font-size: 13pt;
-  color: #c0caf5;
+  color: #E5E9F0;
   border:none;
-  border-radius: 6px;
+  padding-right: 13px;
 }
 
 #workspaces button.active {
-    background: #13131d; 
+    background-color: #13131d; 
 }
 
 #workspaces button:hover {
-  background: #11111b;
-  color: #cdd6f4;
-  box-shadow: none;
+  background-color: #11111b;
 }
 
 #custom-nixos {
     margin-left: 5px;
-    padding: 0 10px;
     font-size: 25px;
-    transition: color .5s;
+    padding: 0px 9px 0px 6px;
+    transition: color .3s;
 }
 #custom-nixos:hover {
-    color: #89ddff;
+    color: #A3BE8C;
 }
