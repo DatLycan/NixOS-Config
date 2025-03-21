@@ -24,7 +24,7 @@ in {
       enable = true;
 
       polarity = "dark";
-      base16Scheme = "./${cfg.theme}.yaml";
+      base16Scheme = builtins.toPath ./${cfg.theme}.yaml;
       image = pkgs.fetchurl {
         url = "https://github.com/atraxsrc/tokyonight-wallpapers/blob/main/crosses_original.png?raw=true";
         sha256 = "68d24637c68f2b60afd7510ddeb8027439357a65804485dad9e2d437af73ff25";
