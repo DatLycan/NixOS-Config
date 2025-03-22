@@ -12,6 +12,10 @@ in {
       // {
         default = false;
       };
+
+    virtualfs = lib.mkOption {
+      default = false;
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -23,7 +27,7 @@ in {
       waybar
     ];
 
-    services.gvfs.enable = true;
+    services.gvfs.enable = cfg.virtualfs;
 
     programs = {
       hyprland.enable = true;
