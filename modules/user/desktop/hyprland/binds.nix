@@ -3,7 +3,7 @@
     "$MOD" = "SUPER";
     "$MENU" = "tofi-drun";
     "$TERMINAL" = "foot fish";
-    "$FILE_MAN" = "thunar";
+    "$FILE_MAN" = "foot superfile";
     "$BROWSER" = "brave";
 
     bind = [
@@ -18,8 +18,8 @@
       "$MOD, T, togglefloating,"
       "$MOD, Q, killactive,"
 
-      "$MOD, S, exec, hyprshot -m region -z --clipboard-only"
-      "$MOD SHIFT, S, exec, hyprshot -m output -m active --clipboard-only"
+      "$MOD, S, exec, hyprshot -m region -z -f capture.png"
+      "$MOD SHIFT, S, exec, hyprshot -m output -m active -f capture.png"
 
       # System
       "$MOD, ESCAPE, exec, hyprlock"
