@@ -36,7 +36,7 @@
           inherit common;
         };
         modules = [
-          ./hosts/default/system.nix
+          ./hosts/de-laptop/system.nix
           ./hardware-configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
