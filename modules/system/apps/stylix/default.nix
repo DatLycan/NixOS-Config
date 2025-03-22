@@ -5,11 +5,11 @@
   common,
   ...
 }: let
-  cfg = config.universal-style;
+  cfg = config.stylix-module;
 in {
-  options.universal-style = {
+  options.stylix-module = {
     enable =
-      lib.mkEnableOption "Enable universal-style module"
+      lib.mkEnableOption ""
       // {
         default = false;
       };

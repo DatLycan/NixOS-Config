@@ -4,24 +4,21 @@
   common,
   ...
 }: let
-  cfg = config.default-user;
+  cfg = config.user-module;
 in {
-  options.default-user = {
+  options.user-module = {
     enable =
-      lib.mkEnableOption "Enable default-user"
+      lib.mkEnableOption ""
       // {
-        default = false;
+        default = true;
       };
 
     userName = lib.mkOption {
       default = common.default.userName;
-      description = "Default User";
     };
 
     autoLogin = lib.mkOption {
-      type = lib.types.bool;
       default = false;
-      description = "Enable auto-login for the default user";
     };
   };
 
@@ -29,8 +26,8 @@ in {
     users.users.${cfg.userName} = {
       isNormalUser = true;
       initialPassword = "foobar";
-      description = "Default User";
-      extraGroups = ["wheel" "audio" "video" "input"];
+      description = "Default user";
+      extraGroups = ["wheel" "audio" "input"];
     };
 
     services.getty.autologinUser = lib.mkIf cfg.autoLogin cfg.userName;

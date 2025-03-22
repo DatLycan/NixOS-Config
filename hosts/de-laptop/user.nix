@@ -1,5 +1,7 @@
-{...}: {
-  imports = map (name: ../../modules/user + "/${name}") (builtins.attrNames (builtins.readDir ../../modules/user));
+{...}: let
+  modulesDir = ../../modules/user;
+in {
+  imports = map (name: modulesDir + "/${name}") (builtins.attrNames (builtins.readDir modulesDir));
 
   nixpkgs.config.allowUnfree = true;
   home.stateVersion = "24.11";

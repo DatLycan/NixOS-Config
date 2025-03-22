@@ -4,11 +4,11 @@
   config,
   ...
 }: let
-  cfg = config.gui;
+  cfg = config.gui-module;
 in {
-  options.gui = {
+  options.gui-module = {
     enable =
-      lib.mkEnableOption "Enable gui module"
+      lib.mkEnableOption ""
       // {
         default = false;
       };
@@ -27,6 +27,12 @@ in {
     programs = {
       hyprland.enable = true;
       hyprlock.enable = true;
+    };
+
+    fonts.fontconfig = {
+      subpixel.rgba = "rgb";
+      hinting.autohint = true;
+      hinting.style = "full";
     };
 
     security.pam.services.hyprlock = {};
