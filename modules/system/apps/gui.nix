@@ -29,6 +29,12 @@ in {
       hyprlock.enable = true;
     };
 
+    fonts.fontconfig = {
+      subpixel.rgba = "rgb";
+      hinting.autohint = true;
+      hinting.style = "full";
+    };
+
     security.pam.services.hyprlock = {};
   };
 }

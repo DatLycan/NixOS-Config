@@ -14,9 +14,7 @@ in {
     ]
     ++ map (name: modulesDir + ("/" + name)) (builtins.attrNames (builtins.readDir modulesDir));
 
-  networking.hostName = "de-laptop";
-
-  default-config.enable = true;
+  networking-module.hostName = "de-laptop";
 
   user-module.autoLogin = true;
   security-module.severity = "lockdown";
