@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   cfg = config.virtualization;
@@ -21,5 +22,10 @@ in {
       libvirtd.enable = true;
       spiceUSBRedirection.enable = true;
     };
+
+    environment.systemPackages = with pkgs; [
+      virtio-win
+      virtiofsd
+    ];
   };
 }
