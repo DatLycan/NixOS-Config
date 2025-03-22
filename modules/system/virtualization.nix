@@ -24,7 +24,6 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      virtio-win
       virtiofsd
     ];
   };
