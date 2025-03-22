@@ -24,10 +24,10 @@ in {
 
   config = lib.mkIf cfg.enable {
     users.users.${cfg.userName} = {
-      isnormaluser = true;
-      initialpassword = "foobar";
+      isNormalUser = true;
+      initialPassword = "foobar";
       description = "Default user";
-      extragroups = ["wheel" "audio" "input"];
+      extraGroups = ["wheel" "audio" "input"];
     };
 
     services.getty.autologinUser = lib.mkIf cfg.autoLogin cfg.userName;
