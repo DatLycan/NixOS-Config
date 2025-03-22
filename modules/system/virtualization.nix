@@ -5,7 +5,7 @@
 }: let
   cfg = config.virtualization;
 in {
-  options.nvf = {
+  options.virtualization = {
     enable =
       lib.mkEnableOption "Enable virtualization module"
       // {
