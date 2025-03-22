@@ -122,8 +122,6 @@ rm -f "${NIXOS_DIR}/hardware-configuration.nix"
 nixos-generate-config --root /mnt
 rm -f "${NIXOS_DIR}/configuration.nix"
 
-git update-index --assume-unchanged "${NIXOS_DIR}/hardware-configuration.nix"
-
 echo -e "\nInstalling NixOS with configuration: $TARGET_CONFIG\n"
 
 sleep 5
