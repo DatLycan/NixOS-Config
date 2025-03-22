@@ -18,6 +18,7 @@ in {
     environment.systemPackages = with pkgs; [
       hyprland
       hyprlock
+      hyprshot
       hyprpolkitagent
       waybar
     ];

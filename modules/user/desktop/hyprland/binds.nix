@@ -17,6 +17,11 @@
       "$MOD, M, fullscreen, 1"
       "$MOD, T, togglefloating,"
       "$MOD, Q, killactive,"
+
+      "$MOD, F12, exec, hyprshot -m region -z --clipboard-only"
+      "$MOD SHIFT, F12, exec, hyprshot -m output -m active --clipboard-only"
+
+      # System
       "$MOD, ESCAPE, exec, hyprlock"
       "$MOD CTRL, ESCAPE, exit,"
       "$MOD CTRL, R, exec, hyprctl reload"
