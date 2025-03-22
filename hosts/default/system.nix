@@ -28,6 +28,7 @@
   gui.enable = true;
   universal-style.enable = true;
   nvf.enable = true;
+  virtualization.enable = true;
 
   home-manager = {
     extraSpecialArgs = {
