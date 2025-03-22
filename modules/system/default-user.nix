@@ -30,7 +30,7 @@ in {
       isNormalUser = true;
       initialPassword = "foobar";
       description = "Default User";
-      extraGroups = ["wheel" "audio" "input"];
+      extraGroups = ["wheel" "audio" "video" "input"];
     };
 
     services.getty.autologinUser = lib.mkIf cfg.autoLogin cfg.userName;

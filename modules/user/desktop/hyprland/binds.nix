@@ -3,7 +3,7 @@
     "$MOD" = "SUPER";
     "$MENU" = "tofi-drun";
     "$TERMINAL" = "foot fish";
-    "$FILE_MAN" = "foot superfile";
+    "$FILE_MAN" = "thunar";
     "$BROWSER" = "brave";
 
     bind = [
@@ -21,6 +21,8 @@
       "$MOD CTRL, ESCAPE, exit,"
       "$MOD CTRL, R, exec, hyprctl reload"
 
+      "$MOD, F1, exec, light -A 10"
+      "$MOD, F2, exec, light -U 10"
       # Moving focus
       "$MOD, H, movefocus, l"
       "$MOD, J, movefocus, d"
