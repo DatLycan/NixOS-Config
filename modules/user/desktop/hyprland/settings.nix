@@ -19,8 +19,8 @@
 
     input = {
       kb_layout = "us";
-      sensitivity = 0.5;
-      force_no_accel = true;
+      sensitivity = -0.1;
+      force_no_accel = false;
     };
 
     exec-once = [

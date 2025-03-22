@@ -9,26 +9,27 @@
     [
       inputs.home-manager.nixosModules.default
     ]
-    ++ map (name: ../../modules/system + ("/" + name)) (builtins.attrNames (builtins.readDir ../../modules/system));
+    ++ (let
+      systemDir = ../../modules/system;
+      toImport = builtins.attrValues (builtins.mapAttrs (name: _: systemDir + ("/" + name)) (builtins.readDir systemDir));
+    in
+      toImport);
 
   networking.hostName = "de-laptop";
 
   default-config.enable = true;
-  default-security = {
-    severity = "lockdown";
-    enable = true;
-  };
-  default-user = {
-    enable = true;
-    autoLogin = true;
-  };
 
-  framework-config.enable = true;
+  user-module.autoLogin = true;
+  security-module.severity = "lockdown";
 
-  gui.enable = true;
-  universal-style.enable = true;
-  nvf.enable = true;
-  virtualization.enable = true;
+  bluetooth-module.enable = true;
+  brightness-module.enable = true;
+  fingerprint-module.enable = true;
+
+  gui-module.enable = true;
+  stylix-module.enable = true;
+  nvf-module.enable = true;
+  virtualisation-module.enable = true;
 
   home-manager = {
     extraSpecialArgs = {

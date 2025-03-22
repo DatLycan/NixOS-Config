@@ -3,14 +3,13 @@
   config,
   ...
 }: let
-  cfg = config.default-security;
+  cfg = config.security-module;
+  d-user = config.user-module.userName;
 in {
-  options.default-security = {
-    enable =
-      lib.mkEnableOption "Enable default-security"
-      // {
-        default = false;
-      };
+  options.security-module = {
+    enable = lib.mkEnableOption {
+      default = true;
+    };
 
     severity = lib.mkOption {
       type = lib.types.enum [
@@ -53,7 +52,7 @@ in {
     (lib.mkIf (cfg.severity == "secure") {
       security.sudo.extraRules = [
         {
-          users = [config.default-user.userName];
+          users = [d-user];
           commands = [
             {
               command = "ALL";
@@ -68,7 +67,7 @@ in {
         ports = [22];
         settings = {
           PasswordAuthentication = true;
-          AllowUsers = [config.default-user.userName];
+          AllowUsers = [d-user];
           PermitRootLogin = "prohibit-password";
         };
       };
@@ -77,7 +76,7 @@ in {
     (lib.mkIf (cfg.severity == "lockdown") {
       security.sudo.extraRules = [
         {
-          users = [config.default-user.userName];
+          users = [d-user];
           commands = [];
         }
       ];

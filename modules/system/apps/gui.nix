@@ -4,14 +4,12 @@
   config,
   ...
 }: let
-  cfg = config.gui;
+  cfg = config.gui-module;
 in {
-  options.gui = {
-    enable =
-      lib.mkEnableOption "Enable gui module"
-      // {
-        default = false;
-      };
+  options.gui-module = {
+    enable = lib.mkEnableOption {
+      default = false;
+    };
   };
 
   config = lib.mkIf cfg.enable {
