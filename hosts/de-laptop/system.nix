@@ -25,8 +25,10 @@ in {
 
   gui-module.enable = true;
   stylix-module.enable = true;
-  nvf-module.enable = true;
   virtualisation-module.enable = true;
+
+  nvf-module.enable = true;
+  environment.sessionVariables.EDITOR = "nvim";
 
   home-manager = {
     extraSpecialArgs = {

@@ -15,6 +15,7 @@ alias ls 'eza --color=always --long --git --no-filesize --icons=always --no-time
 abbr --add -- cc 'clear'
 abbr --add -- rb 'sudo reboot'
 abbr --add -- lg 'lazygit'
+abbr --add -- spf 'superfile'
 abbr --add -- ncc 'nix-store --gc'
 abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos#(hostname) --show-trace'
 

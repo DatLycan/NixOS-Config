@@ -3,7 +3,7 @@
     "$MOD" = "SUPER";
     "$MENU" = "tofi-drun";
     "$TERMINAL" = "foot fish";
-    "$FILE_MAN" = "thunar";
+    "$FILE_MAN" = "foot superfile";
     "$BROWSER" = "brave";
 
     bind = [
@@ -17,12 +17,21 @@
       "$MOD, M, fullscreen, 1"
       "$MOD, T, togglefloating,"
       "$MOD, Q, killactive,"
+
+      "$MOD, S, exec, hyprshot -m region -z -f capture.png"
+      "$MOD SHIFT, S, exec, hyprshot -m output -m active -f capture.png"
+
+      # System
       "$MOD, ESCAPE, exec, hyprlock"
       "$MOD CTRL, ESCAPE, exit,"
       "$MOD CTRL, R, exec, hyprctl reload"
 
-      "$MOD, F1, exec, light -A 10"
-      "$MOD, F2, exec, light -U 10"
+      "$MOD, F1, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"
+      "$MOD, F2, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"
+
+      "$MOD, F3, exec, light -U 10"
+      "$MOD, F4, exec, light -A 10"
+
       # Moving focus
       "$MOD, H, movefocus, l"
       "$MOD, J, movefocus, d"

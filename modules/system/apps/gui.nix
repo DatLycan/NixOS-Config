@@ -12,17 +12,22 @@ in {
       // {
         default = false;
       };
+
+    virtualfs = lib.mkOption {
+      default = false;
+    };
   };
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       hyprland
       hyprlock
+      hyprshot
       hyprpolkitagent
       waybar
     ];
 
-    services.gvfs.enable = true;
+    services.gvfs.enable = cfg.virtualfs;
 
     programs = {
       hyprland.enable = true;

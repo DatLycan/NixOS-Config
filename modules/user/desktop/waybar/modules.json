@@ -1,8 +1,8 @@
 {
     "custom/nixos": {
         "format": "",
-        "tooltip": true,
-        "tooltip-format": "btw"
+        "tooltip": false,
+        "on-click": "hyprlock"
     },
 
 
