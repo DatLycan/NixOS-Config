@@ -5,6 +5,8 @@
 }: let
   cfg = config.nvf-module;
 in {
+  imports = map (name: "./${name}");
+
   options.nvf-module = {
     enable = lib.mkEnableOption {
       default = false;

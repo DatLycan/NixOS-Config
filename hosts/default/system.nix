@@ -3,17 +3,18 @@
   inputs,
   common,
   system,
+  lib,
   ...
-}: {
-  imports =
-    [
-      inputs.home-manager.nixosModules.default
-    ]
-    ++ (let
-      systemDir = ../../modules/system;
-      toImport = builtins.attrValues (builtins.mapAttrs (name: _: systemDir + ("/" + name)) (builtins.readDir systemDir));
-    in
-      toImport);
+}: let
+  systemDir = ../../modules/system;
+in {
+  imports = [
+    inputs.home-manager.nixosModules.default
+    lib.fileset.toList
+    (
+      lib.fileset.fileFilter (file: file.name == "default.nix") systemDir
+    )
+  ];
 
   networking.hostName = "de-laptop";
 

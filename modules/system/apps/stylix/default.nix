@@ -7,6 +7,8 @@
 }: let
   cfg = config.stylix-module;
 in {
+  imports = map (name: "./${name}");
+
   options.stylix-module = {
     enable = lib.mkEnableOption {
       default = false;
