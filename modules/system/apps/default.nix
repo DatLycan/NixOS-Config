@@ -1,3 +1,8 @@
 {
-  imports = map (name: "./${name}");
+  imports = [
+    ./nvf
+    ./stylix
+    ./gui.nix
+    ./virtualisation.nix
+  ];
 }

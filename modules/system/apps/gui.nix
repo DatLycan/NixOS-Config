@@ -7,9 +7,11 @@
   cfg = config.gui-module;
 in {
   options.gui-module = {
-    enable = lib.mkEnableOption {
-      default = false;
-    };
+    enable =
+      lib.mkEnableOption ""
+      // {
+        default = false;
+      };
   };
 
   config = lib.mkIf cfg.enable {

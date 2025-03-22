@@ -7,9 +7,11 @@
   cfg = config.user-module;
 in {
   options.user-module = {
-    enable = lib.mkEnableOption {
-      default = true;
-    };
+    enable =
+      lib.mkEnableOption ""
+      // {
+        default = true;
+      };
 
     userName = lib.mkOption {
       default = common.default.userName;
@@ -21,7 +23,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    users.users.${cfg.username} = {
+    users.users.${cfg.userName} = {
       isnormaluser = true;
       initialpassword = "foobar";
       description = "Default user";

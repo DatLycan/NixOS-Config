@@ -7,9 +7,11 @@
   d-user = config.user-module.userName;
 in {
   options.security-module = {
-    enable = lib.mkEnableOption {
-      default = true;
-    };
+    enable =
+      lib.mkEnableOption ""
+      // {
+        default = true;
+      };
 
     severity = lib.mkOption {
       type = lib.types.enum [

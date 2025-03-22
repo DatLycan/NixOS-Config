@@ -7,9 +7,11 @@
   d-user = config.user-module.userName;
 in {
   options.brightness-module = {
-    enable = lib.mkEnableOption {
-      default = false;
-    };
+    enable =
+      lib.mkEnableOption ""
+      // {
+        default = false;
+      };
   };
 
   config = lib.mkIf cfg.enable {

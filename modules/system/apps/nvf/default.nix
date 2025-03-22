@@ -5,12 +5,18 @@
 }: let
   cfg = config.nvf-module;
 in {
-  imports = map (name: "./${name}");
+  imports = [
+    ./mappings.nix
+    ./plugins.nix
+    ./settings.nix
+  ];
 
   options.nvf-module = {
-    enable = lib.mkEnableOption {
-      default = false;
-    };
+    enable =
+      lib.mkEnableOption ""
+      // {
+        default = false;
+      };
   };
 
   config = lib.mkIf cfg.enable {

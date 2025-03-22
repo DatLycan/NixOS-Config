@@ -3,18 +3,16 @@
   inputs,
   common,
   system,
-  lib,
   ...
 }: let
-  systemDir = ../../modules/system;
+  modulesDir = ../../modules/system;
+  d-user = config.user-module.userName;
 in {
-  imports = [
-    inputs.home-manager.nixosModules.default
-    lib.fileset.toList
-    (
-      lib.fileset.fileFilter (file: file.name == "default.nix") systemDir
-    )
-  ];
+  imports =
+    [
+      inputs.home-manager.nixosModules.default
+    ]
+    ++ map (name: modulesDir + ("/" + name)) (builtins.attrNames (builtins.readDir modulesDir));
 
   networking.hostName = "de-laptop";
 
@@ -38,7 +36,7 @@ in {
       inherit system;
       inherit common;
     };
-    users."${config.default-user.userName}" = import ./user.nix;
+    users."${d-user}" = import ./user.nix;
     backupFileExtension = "backup";
   };
 }

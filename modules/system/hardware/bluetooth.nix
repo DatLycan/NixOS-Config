@@ -6,9 +6,11 @@
   cfg = config.bluetooth-module;
 in {
   options.bluetooth-module = {
-    enable = lib.mkEnableOption {
-      default = false;
-    };
+    enable =
+      lib.mkEnableOption ""
+      // {
+        default = false;
+      };
     autostart = lib.mkOption {
       default = false;
     };

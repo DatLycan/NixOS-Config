@@ -6,9 +6,11 @@
   cfg = config.fingerprint-module;
 in {
   options.fingerprint-module = {
-    enable = lib.mkEnableOption {
-      default = false;
-    };
+    enable =
+      lib.mkEnableOption ""
+      // {
+        default = false;
+      };
   };
 
   config = lib.mkIf cfg.enable {

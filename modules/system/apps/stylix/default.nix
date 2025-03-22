@@ -7,12 +7,12 @@
 }: let
   cfg = config.stylix-module;
 in {
-  imports = map (name: "./${name}");
-
   options.stylix-module = {
-    enable = lib.mkEnableOption {
-      default = false;
-    };
+    enable =
+      lib.mkEnableOption ""
+      // {
+        default = false;
+      };
 
     theme = lib.mkOption {
       default = common.default.theme;
