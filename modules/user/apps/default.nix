@@ -7,6 +7,7 @@
     ./btop.nix
     ./mpv.nix
     ./obs.nix
+    ./homelab.nix
   ];
 
   home.packages = with pkgs; [
