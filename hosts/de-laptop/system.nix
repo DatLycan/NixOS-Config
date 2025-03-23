@@ -24,6 +24,7 @@ in {
   fingerprint-module.enable = true;
 
   gui-module.enable = true;
+  gui-module.virtualfs = true;
   stylix-module.enable = true;
   virtualisation-module.enable = true;
 
