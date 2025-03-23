@@ -24,6 +24,7 @@
     };
 
     exec-once = [
+      "hypridle"
       "hyprlock"
       "waybar"
       "systemctl --user start hyprpolkitagent"
