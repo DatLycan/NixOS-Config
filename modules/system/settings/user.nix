@@ -36,6 +36,8 @@ in {
       extraArgs = [
         "--nohostname"
         "--nohints"
+        "--noissue"
+        "--skip-login"
       ];
     };
   };
