@@ -7,7 +7,7 @@
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";
 
-      timeout = 1;
+      timeout = 0;
     };
 
     plymouth = {
