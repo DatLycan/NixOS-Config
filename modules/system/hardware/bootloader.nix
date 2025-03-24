@@ -1,11 +1,18 @@
 {
-  boot.loader = {
-    systemd-boot.enable = true;
-    systemd-boot.configurationLimit = 3;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 3;
 
-    efi.canTouchEfiVariables = true;
-    efi.efiSysMountPoint = "/boot";
+      efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot";
 
-    timeout = 0;
+      timeout = 1;
+    };
+
+    plymouth = {
+      enable = true;
+      theme = "breeze";
+    };
   };
 }

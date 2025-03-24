@@ -32,6 +32,10 @@ in {
         size = 24;
         package = pkgs.vanilla-dmz;
       };
+
+      targets = {
+        plymouth.enable = false;
+      };
     };
   };
 }
