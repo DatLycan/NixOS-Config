@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{common, ...}: {
   boot = {
     loader = {
       systemd-boot.enable = true;
@@ -13,10 +13,7 @@
     plymouth = {
       enable = true;
       theme = "bgrt";
-      # logo = pkgs.fetchurl {
-      #   url = "";
-      #   sha256 = "";
-      # };
+      logo = common.resources.bootLogo;
     };
   };
 }
