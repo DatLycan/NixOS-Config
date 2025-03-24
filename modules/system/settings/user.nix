@@ -30,6 +30,13 @@ in {
       extraGroups = ["wheel" "audio" "input"];
     };
 
-    services.getty.autologinUser = lib.mkIf cfg.autoLogin cfg.userName;
+    services.getty = {
+      autologinUser = lib.mkIf cfg.autoLogin cfg.userName;
+      greetingLine = "";
+      extraArgs = [
+        "--nohostname"
+        "--nohints"
+      ];
+    };
   };
 }
