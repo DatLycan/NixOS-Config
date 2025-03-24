@@ -38,11 +38,17 @@
       "$MOD, K, movefocus, u"
       "$MOD, L, movefocus, r"
 
-      # Resizeing windows          X  Y
-      "$MOD, left, resizeactive,  -100 0"
-      "$MOD, down,  resizeactive,  0  100"
-      "$MOD, up,    resizeactive,  0 -100"
-      "$MOD, right,  resizeactive, 100 0"
+      # Moving windows
+      "$MOD SHIFT, left,  swapwindow, l"
+      "$MOD SHIFT, down,  swapwindow, d"
+      "$MOD SHIFT, up,    swapwindow, u"
+      "$MOD SHIFT, right, swapwindow, r"
+
+      # Resizeing windows           X  Y
+      "$MOD, left,  resizeactive,  -100 0"
+      "$MOD, down,  resizeactive,   0  100"
+      "$MOD, up,    resizeactive,   0 -100"
+      "$MOD, right, resizeactive,   100 0"
 
       # Switching workspaces
       "$MOD, 1, workspace, 1"
@@ -57,21 +63,33 @@
       "$MOD, 0, workspace, 10"
 
       # Moving windows to workspaces
-      "$MOD SHIFT, 1, movetoworkspacesilent, 1"
-      "$MOD SHIFT, 2, movetoworkspacesilent, 2"
-      "$MOD SHIFT, 3, movetoworkspacesilent, 3"
-      "$MOD SHIFT, 4, movetoworkspacesilent, 4"
-      "$MOD SHIFT, 5, movetoworkspacesilent, 5"
-      "$MOD SHIFT, 6, movetoworkspacesilent, 6"
-      "$MOD SHIFT, 7, movetoworkspacesilent, 7"
-      "$MOD SHIFT, 8, movetoworkspacesilent, 8"
-      "$MOD SHIFT, 9, movetoworkspacesilent, 9"
-      "$MOD SHIFT, 0, movetoworkspacesilent, 10"
+      "$MOD CTRL, 1, movetoworkspacesilent, 1"
+      "$MOD CTRL, 2, movetoworkspacesilent, 2"
+      "$MOD CTRL, 3, movetoworkspacesilent, 3"
+      "$MOD CTRL, 4, movetoworkspacesilent, 4"
+      "$MOD CTRL, 5, movetoworkspacesilent, 5"
+      "$MOD CTRL, 6, movetoworkspacesilent, 6"
+      "$MOD CTRL, 7, movetoworkspacesilent, 7"
+      "$MOD CTRL, 8, movetoworkspacesilent, 8"
+      "$MOD CTRL, 9, movetoworkspacesilent, 9"
+      "$MOD CTRL, 0, movetoworkspacesilent, 10"
+
+      # Moving windows and switching to workspaces
+      "$MOD SHIFT, 1, movetoworkspace, 1"
+      "$MOD SHIFT, 2, movetoworkspace, 2"
+      "$MOD SHIFT, 3, movetoworkspace, 3"
+      "$MOD SHIFT, 4, movetoworkspace, 4"
+      "$MOD SHIFT, 5, movetoworkspace, 5"
+      "$MOD SHIFT, 6, movetoworkspace, 6"
+      "$MOD SHIFT, 7, movetoworkspace, 7"
+      "$MOD SHIFT, 8, movetoworkspace, 8"
+      "$MOD SHIFT, 9, movetoworkspace, 9"
+      "$MOD SHIFT, 0, movetoworkspace, 10"
     ];
 
     bindm = [
-      "$MOD, mouse:272, movewindow"
-      "$MOD, mouse:273, resizewindow"
+      "$MOD,  mouse:272,  movewindow"
+      "$MOD,  mouse:273,  resizewindow"
     ];
   };
 }
