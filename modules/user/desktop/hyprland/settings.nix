@@ -44,6 +44,8 @@
       "maxsize 1 1, class:^(xwaylandvideobridge)$"
       "noblur, class:^(xwaylandvideobridge)$"
       "nofocus, class:^(xwaylandvideobridge)$"
+
+      "idleinhibit fullscreen, fullscreen:1"
     ];
   };
 }
