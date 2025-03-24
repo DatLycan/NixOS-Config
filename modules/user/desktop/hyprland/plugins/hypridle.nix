@@ -8,6 +8,8 @@
 
         before_sleep_cmd = "hyprlock";
         after_sleep_cmd = "hyprctl dispatch dpms on";
+
+        ignore_idle_inhibitors = false;
       };
 
       listener = [
