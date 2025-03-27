@@ -6,7 +6,7 @@
       command_on_non_image_loaded=apply-profile video; disable-section image; script-message status-line-disable; no-osd set video-pan-x 0; no-osd set video-pan-y 0; no-osd set video-zoom 0
     '';
 
-    ".config/mpv/script-opts/status-line.conf".text = ''
+    ".config/mpv/script-opts/status_line.conf".text = ''
       enabled=no
     '';
   };

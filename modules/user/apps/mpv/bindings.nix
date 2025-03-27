@@ -76,5 +76,7 @@
     # Zoom towards where the cursor is hovering.
     WHEEL_UP   {image} script-message cursor-centric-zoom .1
     WHEEL_DOWN {image} script-message cursor-centric-zoom -.1
+    WHEEL_LEFT {image} ignore
+    WHEEL_RIGHT {image} ignore
   '';
 }

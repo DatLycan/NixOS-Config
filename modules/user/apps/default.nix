@@ -5,7 +5,7 @@
     ./spotify
     ./vscode
     ./btop.nix
-    ./mpv.nix
+    ./mpv
     ./obs.nix
     ./homelab.nix
   ];
