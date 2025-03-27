@@ -10,6 +10,7 @@ alias ... 'z ../..'
 alias .... 'z ../../..'
 
 alias ls 'eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+alias cat 'bat'
 
 # Abreviations
 abbr --add -- cc 'clear'
@@ -18,6 +19,15 @@ abbr --add -- lg 'lazygit'
 abbr --add -- spf 'superfile'
 abbr --add -- ncc 'nix-store --gc'
 abbr --add -- nr 'sudo nixos-rebuild switch --flake /etc/nixos#(hostname) --show-trace'
+
+# Stream online content
+function stream
+  if string match -q "magnet:*" $argv || string match -q "*.torrent" $argv
+    peerflix --mpv "$argv"
+  else
+    mpv "$argv"
+  end
+end
 
 # Enable plugins
 thefuck --alias fk | source 

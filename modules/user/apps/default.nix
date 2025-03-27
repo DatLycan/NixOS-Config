@@ -5,7 +5,7 @@
     ./spotify
     ./vscode
     ./btop.nix
-    ./mpv.nix
+    ./mpv
     ./obs.nix
     ./homelab.nix
   ];
@@ -15,6 +15,7 @@
     pavucontrol
     moonlight-qt
     popsicle
+    pinta
 
     xfce.thunar
     xfce.thunar-volman
