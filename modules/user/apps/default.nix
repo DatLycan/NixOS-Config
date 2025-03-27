@@ -15,6 +15,7 @@
     pavucontrol
     moonlight-qt
     popsicle
+    pinta
 
     xfce.thunar
     xfce.thunar-volman
