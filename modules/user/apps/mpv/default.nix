@@ -2,9 +2,9 @@
   folderpath = ./.;
   files = builtins.attrNames (builtins.readDir folderpath);
   nixfiles = builtins.filter (name: name != "default.nix" && builtins.match ".*\\.nix" name != null) files;
-  currentdir = map (name: import (folderpath + "/${name}")) nixfiles;
+  currentDir = map (name: import (folderpath + "/${name}")) nixfiles;
 in {
-  imports = currentdir;
+  imports = currentDir;
 
   programs.mpv = {
     enable = true;
