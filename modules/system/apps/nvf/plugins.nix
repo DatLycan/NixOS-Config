@@ -15,6 +15,7 @@
       comment.enable = true;
       tabline.enable = true;
       statusline.enable = true;
+      move.enable = true;
     };
 
     autocomplete.blink-cmp = {
