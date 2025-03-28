@@ -18,6 +18,8 @@
         enable = true;
         format.enable = true;
       };
+
+      csharp.enable = true;
     };
 
     options = {
