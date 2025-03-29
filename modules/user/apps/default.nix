@@ -16,6 +16,7 @@
     moonlight-qt
     popsicle
     pinta
+    gimp
 
     xfce.thunar
     xfce.thunar-volman
