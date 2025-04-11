@@ -3,11 +3,11 @@
     ./brave
     ./superfile
     ./spotify
-    ./vscode
     ./btop.nix
     ./mpv
     ./obs.nix
     ./homelab.nix
+    ./dev
   ];
 
   home.packages = with pkgs; [
