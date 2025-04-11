@@ -20,6 +20,7 @@
       };
 
       csharp.enable = true;
+      rust.enable = true;
     };
 
     options = {

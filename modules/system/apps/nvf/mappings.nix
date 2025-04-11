@@ -1,5 +1,4 @@
 {
-  programs.nvf.settings.vim.maps = {
-
-  };
+  programs.nvf.settings.vim.keymaps = [
+  ];
 }
