@@ -1,6 +1,9 @@
-{
+{config, ...}: {
   wayland.windowManager.hyprland.settings = {
-    monitor = ", 2880x1920@120, auto, 2";
+    monitor = [
+      "eDP-1, 2880x1920@120, auto, 2"
+      ", preferred, auto, 1"
+    ];
 
     env = [
       # Hint Electron apps to use Wayland
@@ -30,6 +33,7 @@
       "systemctl --user start hyprpolkitagent"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
+      "${config.home.homeDirectory}/.config/hypr/scripts/monitor_autoswitch.sh"
     ];
 
     xwayland = {
