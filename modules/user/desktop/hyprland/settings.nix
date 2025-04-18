@@ -1,9 +1,6 @@
 {config, ...}: {
   wayland.windowManager.hyprland.settings = {
-    monitor = [
-      "eDP-1, 2880x1920@120, auto, 2"
-      ", preferred, auto, 1"
-    ];
+    # monitor = "eDP-1, 2880x1920@120, auto, 2";
 
     env = [
       # Hint Electron apps to use Wayland
