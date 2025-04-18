@@ -1,4 +1,4 @@
-{
+{config, ...}: {
   wayland.windowManager.hyprland.settings = {
     "$MOD" = "SUPER";
     "$MENU" = "tofi-drun";
@@ -24,6 +24,8 @@
       # System
       "$MOD, ESCAPE, exec, hyprlock"
       "$MOD CTRL, ESCAPE, exit,"
+
+      "$MOD, R, exec, ${config.home.homeDirectory}/.config/hypr/scripts/monitor_autoswitch.sh"
       "$MOD CTRL, R, exec, hyprctl reload"
 
       "$MOD, F1, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"

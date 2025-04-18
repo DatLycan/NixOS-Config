@@ -5,8 +5,6 @@
     LAPTOP="eDP-1"
     EXTERNAL=$(hyprctl monitors -j | ${pkgs.jq}/bin/jq -r '.[].name' | grep -v "$LAPTOP" | head -n1)
 
-    sleep 5
-
     if [ -n "$EXTERNAL" ]; then
       hyprctl keyword monitor "$LAPTOP,disable"
       hyprctl keyword monitor "$EXTERNAL,preferred,auto,1"

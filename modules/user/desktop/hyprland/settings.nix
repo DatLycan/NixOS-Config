@@ -30,7 +30,7 @@
       "systemctl --user start hyprpolkitagent"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
-      "${config.home.homeDirectory}/.config/hypr/scripts/monitor_autoswitch.sh"
+      "sleep 3 && ${config.home.homeDirectory}/.config/hypr/scripts/monitor_autoswitch.sh"
     ];
 
     xwayland = {
