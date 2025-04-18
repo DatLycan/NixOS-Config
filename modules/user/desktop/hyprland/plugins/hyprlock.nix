@@ -22,7 +22,7 @@
         text = "$TIME";
         font_size = 96;
         font_family = "JetBrains Mono";
-        position = "0, 1000";
+        position = "0, 51%";
         halign = "center";
       };
 

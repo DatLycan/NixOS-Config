@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    jq
     cliphist
     libnotify
     libsForQt5.xwaylandvideobridge

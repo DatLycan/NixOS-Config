@@ -5,6 +5,7 @@
     ./style.nix
     ./dependencies.nix
     ./autostart.nix
+    ./monitors.nix
     ./plugins
   ];
 
