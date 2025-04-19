@@ -27,6 +27,7 @@ in {
   gui-module.virtualfs = true;
   stylix-module.enable = true;
   virtualisation-module.enable = true;
+  virtual-here-module.enable = true;
 
   nvf-module.enable = true;
   environment.sessionVariables.EDITOR = "nvim";
