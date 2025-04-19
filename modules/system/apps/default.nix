@@ -4,5 +4,6 @@
     ./stylix
     ./gui.nix
     ./virtualisation.nix
+    ./virtual-here.nix
   ];
 }
