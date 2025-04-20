@@ -7,7 +7,7 @@
 
     if [ -n "$EXTERNAL" ]; then
       hyprctl keyword monitor "$LAPTOP,disable"
-      hyprctl keyword monitor "$EXTERNAL,preferred,auto,1"
+      hyprctl keyword monitor "$EXTERNAL, 2560x1080@120,auto,1"
     else
       hyprctl keyword monitor "$LAPTOP, 2880x1920@120, auto, 2"
     fi
