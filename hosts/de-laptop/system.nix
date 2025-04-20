@@ -28,6 +28,8 @@ in {
   stylix-module.enable = true;
   virtualisation-module.enable = true;
 
+  usbip-module.enable = true;
+
   nvf-module.enable = true;
   environment.sessionVariables.EDITOR = "nvim";
 

@@ -25,6 +25,7 @@ in {
       wl-clipboard
       lazygit
       git-credential-oauth
+      usbutils
     ];
   };
 }

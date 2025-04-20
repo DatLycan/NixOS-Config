@@ -5,5 +5,6 @@
     ./gui.nix
     ./virtualisation.nix
     ./virtual-here.nix
+    ./usbip.nix
   ];
 }
