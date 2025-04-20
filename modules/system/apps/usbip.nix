@@ -37,9 +37,11 @@ in {
       serviceConfig = {
         Type = "forking";
         ExecStart = "/run/current-system/sw/bin/usbipd";
-
+        Restart = "always";
         WorkingDirectory = "/run/current-system/sw/bin/";
         User = "root";
+
+        TimeoutStopSec = "0";
       };
     };
 
