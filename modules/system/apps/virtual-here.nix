@@ -43,7 +43,11 @@
   };
 in {
   options.virtual-here-module = {
-    enable = lib.mkEnableOption "Enable VirtualHere support";
+    enable =
+      lib.mkEnableOption "Enable VirtualHere support"
+      // {
+        default = false;
+      };
 
     client = {
       enable = lib.mkOption {default = false;};
@@ -77,7 +81,7 @@ in {
       wantedBy = ["multi-user.target"];
 
       serviceConfig = {
-        Type = "forking";
+        Type = "simple";
         ExecStart = "/run/current-system/sw/bin/vhclient -n";
         Restart = "always";
         WorkingDirectory = "/run/current-system/sw/bin/";
