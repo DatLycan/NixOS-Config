@@ -29,7 +29,6 @@ in {
   virtualisation-module.enable = true;
 
   usbip-module.enable = true;
-  usbip-module.server.enable = true;
 
   nvf-module.enable = true;
   environment.sessionVariables.EDITOR = "nvim";
