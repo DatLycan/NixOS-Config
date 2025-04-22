@@ -17,6 +17,7 @@
     popsicle
     pinta
     gimp
+    prismlauncher
 
     xfce.thunar
     xfce.thunar-volman
