@@ -18,6 +18,7 @@
     pinta
     gimp
     prismlauncher
+    steam-run
 
     xfce.thunar
     xfce.thunar-volman
