@@ -1,5 +1,9 @@
 {pkgs, ...}: {
-  home = {
-    packages = with pkgs; [vscodium];
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      vscodevim.vim
+      csharpier.csharpier-vscode
+    ];
   };
 }
