@@ -32,6 +32,7 @@ in {
 
   nvf-module.enable = true;
   environment.sessionVariables.EDITOR = "nvim";
+  programs.nix-ld.enable = true;
 
   home-manager = {
     extraSpecialArgs = {

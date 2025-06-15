@@ -7,7 +7,5 @@
     rustup
     gcc
     dotnetCorePackages.dotnet_8.sdk
-
-    unityhub
   ];
 }
