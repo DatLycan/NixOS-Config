@@ -7,5 +7,6 @@
     rustup
     gcc
     dotnetCorePackages.dotnet_8.sdk
+    dotnetPackages.Nuget
   ];
 }
