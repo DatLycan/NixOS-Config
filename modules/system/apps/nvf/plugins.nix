@@ -21,7 +21,7 @@
 
     autocomplete.blink-cmp = {
       enable = true;
-      setupOpts.keymap.preset = "enter";
+      setupOpts.keymap.preset = "default";
     };
   };
 }
