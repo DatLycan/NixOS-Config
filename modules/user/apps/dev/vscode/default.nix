@@ -1,9 +1,9 @@
 {pkgs, ...}: {
-  programs.vscode = {
-    enable = false;
-    extensions = with pkgs.vscode-extensions; [
-      vscodevim.vim
-      csharpier.csharpier-vscode
+  home = {
+    packages = with pkgs; [
+      vscode-fhs
     ];
+
+    file.".config/Code/User/settings.json" = ./settings.json;
   };
 }
