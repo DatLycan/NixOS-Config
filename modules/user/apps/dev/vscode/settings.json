@@ -10,6 +10,7 @@
   "editor.detectIndentation": false,
   "editor.guides.indentation": false,
   "editor.renderWhitespace": "none",
+  "editor.renderLineHighlight": "none",
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
   "editor.scrollbar.horizontal": "hidden",
@@ -72,6 +73,8 @@
   "breadcrumbs.enabled": false,
   "files.autoSave": "onFocusChange",
   "extensions.ignoreRecommendations": true,
+
+  "dotnet.automaticallyCreateSolutionInWorkSpace": false,
 
   "vim.useSystemClipboard": true,
   "vim.camelCaseMotion.enable": true,

@@ -4,7 +4,8 @@
   ];
 
   home.packages = with pkgs; [
-    dotnetCorePackages.dotnet_8.sdk
+    dotnet-sdk
     dotnetPackages.Nuget
+    csharpier
   ];
 }
