@@ -4,9 +4,10 @@
   ];
 
   home.packages = with pkgs; [
-    rustup
-    gcc
-    dotnetCorePackages.dotnet_8.sdk
+    dotnet-sdk
     dotnetPackages.Nuget
+    csharpier
+    csharprepl
+    docker
   ];
 }
