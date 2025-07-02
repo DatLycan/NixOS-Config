@@ -7,5 +7,7 @@
     dotnet-sdk
     dotnetPackages.Nuget
     csharpier
+    csharprepl
+    docker
   ];
 }
