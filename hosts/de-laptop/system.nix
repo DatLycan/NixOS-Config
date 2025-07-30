@@ -34,6 +34,18 @@ in {
   environment.sessionVariables.EDITOR = "nvim";
   programs.nix-ld.enable = true;
 
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    amdgpu.amdvlk = {
+      enable = true;
+      support32Bit.enable = true;
+    };
+  };
+
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;

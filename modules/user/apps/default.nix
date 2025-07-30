@@ -19,6 +19,9 @@
     gimp
     prismlauncher
     steam-run
+    steam
+    winetricks
+    wineWowPackages.waylandFull
 
     xfce.thunar
     xfce.thunar-volman

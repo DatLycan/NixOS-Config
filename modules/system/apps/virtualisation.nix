@@ -18,10 +18,12 @@ in {
   config = lib.mkIf cfg.enable {
     programs.virt-manager.enable = true;
     users.groups.libvirtd.members = [d-user];
+    users.extraGroups.docker.members = [d-user];
 
     virtualisation = {
       libvirtd.enable = true;
       spiceUSBRedirection.enable = true;
+      docker.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
