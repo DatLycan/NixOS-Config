@@ -8,7 +8,6 @@
   ];
 
   home.sessionVariables = {
-    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet/";
     LD_LIBRARY_PATH =
       "${pkgs.lib.makeLibraryPath [
         pkgs.freetype
