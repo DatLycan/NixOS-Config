@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./vscode
-    ./monogame
+    ./monogame.nix
   ];
 
   home.packages = with pkgs; [
