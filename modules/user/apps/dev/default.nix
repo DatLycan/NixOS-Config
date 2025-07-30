@@ -4,10 +4,9 @@
   ];
 
   home.packages = with pkgs; [
-    dotnet-sdk
+    dotnetCorePackages.sdk_8_0_1xx-bin
     dotnetPackages.Nuget
     csharpier
     csharprepl
-    docker
   ];
 }
