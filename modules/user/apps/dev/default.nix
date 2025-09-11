@@ -10,5 +10,6 @@
     dotnetPackages.Nuget
     csharpier
     csharprepl
+    act
   ];
 }

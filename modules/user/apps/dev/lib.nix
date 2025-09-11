@@ -7,6 +7,9 @@
     xorg.libXrandr
     glfw-wayland
     vulkan-loader
+    vulkan-extension-layer
+    vulkan-validation-layers
+    haskellPackages.gpu-vulkan-khr-surface
   ];
 
   home.sessionVariables = {
